@@ -18,19 +18,29 @@
  <!-- Wrapper -->
  <div id="wrapper">
 
-  <!-- MINIMALIST STICKY NAV -->
+ <!-- MINIMALIST STICKY NAV -->
 <header id="navbar">
-<nav class="container">
-  <ul class="nav-links">
-    <li><a href="#banner">HOME</a></li>
-    <li><a href="#about">ABOUT</a></li>
-    <li><a href="#experience">EXPERIENCE</a></li>
-    <li><a href="#projects">PROJECTS</a></li>
-    <li><a href="#skills">SKILLS</a></li>
-    <li><a href="#contact">CONTACT</a></li>
-  </ul>
-</nav>
+  <nav class="container">
+    <ul class="nav-links">
+      <!-- always visible -->
+      <li><a href="#banner">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+
+      <!-- “More ▾” toggle (only shows ≤ 600 px) -->
+      <li class="mobile-more">
+        <button class="nav-toggle" aria-expanded="false">MORE ▾</button>
+      </li>
+
+      <!-- extra links (hidden on mobile until toggle) -->
+      <li class="extra"><a href="#experience">EXPERIENCE</a></li>
+      <li class="extra"><a href="#projects">PROJECTS</a></li>
+      <li class="extra"><a href="#skills">SKILLS</a></li>
+      <li class="extra"><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
 </header>
+
+
 <!-- Banner / Hero with animated BG & overlay -->
 <div id="banner-wrapper">
   <div id="bg"></div>
@@ -44,7 +54,7 @@
 
         <!-- 1b. Subtitle -->
         <p class="animate-subtitle">
-          Data Scientist • Machine Learning • Analytics
+          Data Science • Machine Learning • Analytics
         </p>
 
         <!-- 1c. Social / Resume icons -->
@@ -140,51 +150,120 @@
       </div>
     </section>
 
-    <!-- Experience -->
-    <section id="experience">
-      <h2 class="about-title">EXPERIENCE</h2>
-      <hr class="about-divider" />
-    
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-date">Jan 2025 – Apr 2025</div>
-          <h3 class="timeline-title">Data Science Consultant</h3>
-          <div class="timeline-company">
-            Kearney Student Labs
+    <!-- ▸▸ EXPERIENCE – flip-card timeline ▸▸ -->
+<section id="experience" class="experience-section">
+  <div class="experience-container">
+    <h2 class="about-title">EXPERIENCE</h2>
+    <hr class="about-divider" />
+
+    <div class="timeline">
+
+      <!-- ─────────────────── Kearney ─────────────────── -->
+      <div class="timeline-item">
+        <div class="flip-card">                      <!-- NEW wrapper -->
+
+          <!-- ▸ Front ▸ -->
+          <div class="card-face card-front">
+            <div class="timeline-date">Jan 2025 – Apr 2025</div>
+            <h3 class="timeline-title">Data Science Consultant</h3>
+            <div class="timeline-company">Kearney Student Labs</div>
+            <div class="timeline-location">Remote, USA</div>
           </div>
-          <div class="timeline-location">Remote, USA</div>
 
-        </div>
-    
-        <div class="timeline-item">
-          <div class="timeline-date">Sep 2023 – Aug 2024</div>
-          <h3 class="timeline-title">Data Scientist</h3>
-          <div class="timeline-company">Finsire</div>
-          <div class="timeline-location">Chennai, India</div>
-        </div>
-    
-        <div class="timeline-item">
-          <div class="timeline-date">May 2022 – Jun 2022</div>
-          <h3 class="timeline-title">App Development Intern</h3>
-          <div class="timeline-company">Nature Healers Climate Solutions</div>
-          <div class="timeline-location">Remote, India</div>
-        </div>
-    
-        <div class="timeline-item">
-          <div class="timeline-date">Sep 2021 – Nov 2021</div>
-          <h3 class="timeline-title">Web Development Intern</h3>
-          <div class="timeline-company">Blod.in</div>
-          <div class="timeline-location">Chennai, India</div>
-        </div>
+          <!-- ▸ Back ▸ -->
+          <div class="card-face card-back">
+            <ul>
+              <li>Built a procurement-analytics framework flagging negotiation-worthy spend with <strong>97.3 % accuracy</strong>.</li>
+              <li>Forecasted procurement spend (Holt-Winters, MAPE 8.46 %).</li>
+              <li>Identified key employee-benefit cost drivers via regression.</li>
+            </ul>
+          </div>
 
-        <div class="timeline-item">
-          <div class="timeline-date">May 2021 – Aug 2021</div>
-          <h3 class="timeline-title">Full-Stack Development Intern</h3>
-          <div class="timeline-company">MacAppStudio</div>
-          <div class="timeline-location">Chennai, India</div>
+        </div><!-- /.flip-card -->
+      </div><!-- /.timeline-item -->
+
+      <!-- ─────────────────── Finsire ─────────────────── -->
+      <div class="timeline-item">
+        <div class="flip-card">
+          <div class="card-face card-front">
+            <div class="timeline-date">Sep 2023 – Aug 2024</div>
+            <h3 class="timeline-title">Data Scientist</h3>
+            <div class="timeline-company">Finsire</div>
+            <div class="timeline-location">Chennai, India</div>
+          </div>
+
+          <div class="card-face card-back">
+            <ul>
+              <li>Deployed a vehicle-valuation model &amp; DB (<strong>23 K vehicles</strong>) for collateral-based lending.</li>
+              <li>Optimised Flask REST APIs → refresh time <strong>2 min → 2 s</strong>.</li>
+              <li>Built Word2Vec / BERT bank-statement analyser (65 % accuracy).</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </section>
+
+      <!-- ─────────────────── Nature Healers ─────────────────── -->
+      <div class="timeline-item">
+        <div class="flip-card">
+          <div class="card-face card-front">
+            <div class="timeline-date">May 2022 – Jun 2022</div>
+            <h3 class="timeline-title">App Development Intern</h3>
+            <div class="timeline-company">Nature Healers Climate Solutions</div>
+            <div class="timeline-location">Remote, India</div>
+          </div>
+
+          <div class="card-face card-back">
+            <ul>
+              <li>Created a mobile app that <strong>gamifies climate action</strong> to boost user engagement in sustainability.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────── Blod.in ─────────────────── -->
+      <div class="timeline-item">
+        <div class="flip-card">
+          <div class="card-face card-front">
+            <div class="timeline-date">Sep 2021 – Nov 2021</div>
+            <h3 class="timeline-title">Web Development Intern</h3>
+            <div class="timeline-company">Blod.in</div>
+            <div class="timeline-location">Chennai, India</div>
+          </div>
+
+          <div class="card-face card-back">
+            <ul>
+              <li>Built a ReactJS + Firebase dashboard for hospitals to filter blood donors by type, distance &amp; eligibility.</li>
+              <li>Improved response speed for urgent transfusions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ─────────────────── MacAppStudio ─────────────────── -->
+      <div class="timeline-item">
+        <div class="flip-card">
+          <div class="card-face card-front">
+            <div class="timeline-date">May 2021 – Aug 2021</div>
+            <h3 class="timeline-title">Full-Stack Development Intern</h3>
+            <div class="timeline-company">MacAppStudio</div>
+            <div class="timeline-location">Chennai, India</div>
+          </div>
+
+          <div class="card-face card-back">
+            <ul>
+              <li>Re-created native apps &amp; a website with React Native, Firebase &amp; Firestore for a Middle-East client.</li>
+              <li>Drove the firm’s shift to a <em>single cross-platform</em> stack.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /.timeline -->
+  </div><!-- /.experience-container -->
+</section>
+<!-- ▸▸ END EXPERIENCE ▸▸ -->
+
+
     
     
     
@@ -451,6 +530,32 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggle = document.querySelector('.nav-toggle');
+      const nav    = document.querySelector('.nav-links');
+    
+      /* 1️⃣  open / close when “More ▾” is pressed */
+      toggle.addEventListener('click', () => {
+        const isOpen = nav.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        toggle.setAttribute('aria-expanded', isOpen);
+      });
+    
+      /* 2️⃣  close again after a menu item is chosen (mobile view) */
+      nav.addEventListener('click', e => {
+        if (e.target.tagName === 'A' && nav.classList.contains('open')) {
+          nav.classList.remove('open');
+          toggle.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+    </script>
+    
+    
+  
 
 </body>
 </html>

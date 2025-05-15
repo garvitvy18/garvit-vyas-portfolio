@@ -3763,101 +3763,117 @@ input, select, textarea {
 			visibility: visible;
 		}
 
-/* ——— Minimalist sticky navbar ——— */
-#navbar {
-	position: fixed;
-	top: 0; left: 0;
-	width: 100%;
-	background: rgba(36,41,67,0.9);
-	z-index: 1000;
-  }
-  #navbar .container {
-	max-width: 1200px;
-	margin: 0 auto;
-	display: flex;
-	justify-content: center;
-	padding: 0.75rem 1rem;
-  }
-  .nav-links {
-	display: flex;
-	gap: 2rem;
-	list-style: none;
-  }
-  .nav-links li a {
-	color: #fff;
-	text-decoration: none;
-	font-weight: 600;
-	transition: color 0.2s ease-in-out;
-  }
-  .nav-links li a:hover {
-	color: #9bf1ff;
-  }
-  /* ensure page content sits below navbar */
-  body {
-	padding-top: 3.5rem;
-  }
- /* ——— Root variables ——— */
+  
+  /* ─────────────────────────────────────────────────────────
+   ——— Minimalist sticky navbar ———
+───────────────────────────────────────────────────────── */
+/* ───────── Root vars & body offset ───────── */
+/* ───  Root  ───────────────────────────────────────────── */
+/* ──────────────────────────────────────────
+   ROOT VARS
+────────────────────────────────────────── */
 :root {
-	--navbar-height: 3.5rem; /* adjust to your actual nav height */
-	--navbar-bg: #242943;    /* opaque nav background color */
+	--navbar-height: 3.5rem;   /* match real nav height */
+	--navbar-bg:    #242943;   /* dark blue background  */
   }
   
-  /* ——— Sticky Nav styling ——— */
+  /* ──────────────────────────────────────────
+	 STICKY NAV CONTAINER
+  ────────────────────────────────────────── */
   #navbar {
 	position: fixed;
 	top: 0; left: 0;
 	width: 100%;
 	height: var(--navbar-height);
-	background-color: var(--navbar-bg);
+	background: var(--navbar-bg);
+	box-shadow: 0 2px 4px rgba(0,0,0,.2);
 	z-index: 1000;
-	box-shadow: 0 2px 4px rgba(0,0,0,0.2);
   }
-  
-  /* Left-align the nav items */
   #navbar .container {
+	max-width: 1200px;
+	margin: 0 auto;
+	height: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: flex-start;
-	height: 100%;
   }
   
-  /* Nav links container */
+  /* ──────────────────────────────────────────
+	 LINK LIST
+  ────────────────────────────────────────── */
   .nav-links {
 	display: flex;
+	gap: 1.5rem;
+	list-style: none;
 	margin: 0;
 	padding: 0;
-	list-style: none;
-	gap: 1.5rem;
   }
   
-  /* Links */
-  .nav-links li a {
+  /* shared styles for anchors **and** the “More” button */
+  .nav-links a,
+  .nav-toggle {
 	display: block;
 	padding: 0.5rem 0.75rem;
 	color: #fff;
-	text-decoration: none !important;
-	border-bottom: none !important;
-	transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+	font-weight: 600;
+	background: none;
+	border: 0;
+	cursor: pointer;
+	text-decoration: none !important;   /* no underlines */
+	transition: color .2s ease-in-out;
   }
-  
-  /* Hover state */
-  .nav-links li a:hover {
+  .nav-links a:hover,
+  .nav-toggle:hover {
 	color: #9bf1ff;
   }
   
-  /* Active pill */
-  .nav-links li a.active {
-	background-color: #fff;
+  /* active section indicator (set by your JS) */
+  .nav-links a.active {
+	background: #fff;
 	color: var(--navbar-bg);
 	border-radius: 4px;
 	font-weight: 700;
   }
   
-  /* Push page content down below the nav */
-  body {
-	padding-top: var(--navbar-height);
+  /* push page below bar */
+  body { padding-top: var(--navbar-height); }
+  
+  /* ──────────────────────────────────────────
+	 DESKTOP  ( > 600 px )
+  ────────────────────────────────────────── */
+  @media (min-width: 601px) {
+	.mobile-more { display: none; }  /* hide “More ▾” */
+	.extra       { display: list-item; }  /* show all links */
   }
   
+  /* ──────────────────────────────────────────
+	 MOBILE  ( ≤ 600 px )
+  ────────────────────────────────────────── */
+  @media (max-width: 600px) {
+	/* layout: first two links + “More” inline */
+	.nav-links { gap: 1rem; }
+  
+	/* overflow links hidden until JS adds .open */
+	.extra { display: none; }
+  
+	/* show overflow when list gains .open */
+	.nav-links.open .extra {
+	  display: block;
+	  width: 100%;           /* full-width tap targets */
+	}
+  
+	/* dropdown container */
+	.nav-links.open {
+	  position: absolute;
+	  top: var(--navbar-height);
+	  left: 0;
+	  width: 100%;
+	  flex-direction: column;
+	  background: var(--navbar-bg);
+	  padding: 0.5rem 0;
+	}
+  }
+  
+
   /* ─────────────────────────────────────────────────────────
    Hero / Banner: panning BG + overlay effect
 ───────────────────────────────────────────────────────── */
@@ -4006,6 +4022,64 @@ input, select, textarea {
 	margin: 0 !important;
 	top: 0 !important;
   }
+
+/* --------------- GLOBAL SAFER VIEWPORT --------------- */
+#banner .inner {
+	/* Use the dynamic viewport units that respect mobile UI chrome */
+	min-height: 100dvh;          /* modern browsers */
+	min-height: 100svh;          /* iOS 15 fallback */
+  }
+  
+  /* --------------- MEDIUM SCREENS (tablets & small laptops) --------------- */
+  @media (max-width: 992px) {
+	.animate-title   { font-size: clamp(3rem, 6vw + 1rem, 4.75rem); }
+  }
+  
+  /* --------------- SMALL SCREENS (phones) --------------- */
+  @media (max-width: 600px) {
+  
+	/* 1.  Hero copy -------------------------------------------------------- */
+	.animate-title   {                       /* prevents horizontal scroll   */
+	  font-size: clamp(2.25rem, 9vw + .5rem, 3.5rem);
+	  line-height: 1.15;
+	  word-break: break-word;               /* wrap long names gracefully   */
+	}
+	.animate-subtitle{
+	  font-size: 1rem;
+	  margin: .75em 0 1.5em;
+	}
+  
+	/* 2.  Social / résumé icons ------------------------------------------- */
+	nav.icons a.icon{
+	  width: 2.25rem;
+	  height: 2.25rem;
+	  line-height: 2.25rem;
+	  font-size: 1rem;
+	}
+  
+	/* 3.  Background animation -------------------------------------------- */
+	#banner-wrapper #bg{
+	  width: 200%;                 /* cut image bandwidth on phones       */
+	  background-size: 1500px auto;
+	  animation-duration: 40s;     /* maintains apparent speed            */
+	}
+  }
+  
+  /* --------------- OPTIONAL: prevent body scroll if anything slips ------- */
+  html, body { max-width: 100%; overflow-x: hidden; }
+/* put this in your custom overrides file, BELOW the template's main.css */
+
+/* ----- revive the panning background on phones ----- */
+@media (max-width: 600px) {
+	#banner-wrapper #bg {
+	  display: block !important;    /* override Phantom’s “display:none”   */
+	  width: 200%;
+	  background-size: 1500px auto;
+	  animation-duration: 40s;
+	}
+  }
+	
+
 
 /* container & layout */
 .about-section {
@@ -4221,6 +4295,26 @@ input, select, textarea {
   .about-section {
 	font-family: inherit !important;
   }
+
+  /* ----------------------------------------------------------
+   ABOUT SECTION – phones / small tablets
+   ---------------------------------------------------------- */
+@media (max-width: 750px) {
+
+	/* 1. Show the image first (optional, but usually prettier) */
+	.about-image      { grid-row: 1; }       /* moves it above .about-text */
+  
+	/* 2. Resize the picture so it feels like a portrait, not a banner */
+	.about-image img  {
+	  width:  65vw;                          /* fluid, never wider than 65 % of viewport */
+	  max-width: 260px;                      /* hard cap so big phones don’t get huge */
+	}
+  
+	/* 3. Tidy spacing */
+	.about-image      { margin: 0 auto 1.75rem; }  /* centre + gap under photo */
+	.about-text       { text-align: left;   }      /* keep copy left-aligned */
+  }
+  
   
 /* ─────────────────────────────────────────────────────────
    EXPERIENCE TIMELINE - FINAL OVERRIDE
@@ -4334,6 +4428,231 @@ input, select, textarea {
 	padding-top: 1rem;     /* instead of 2.5rem */
   }
   
+/* ---------------------------------------------------------------
+   EXPERIENCE – core wrapper duplicates ABOUT container behaviour
+---------------------------------------------------------------- */
+.experience-section            { padding: 4rem 2rem; }
+.experience-container          {
+  max-width: 1200px;
+  margin: 0 auto;                 /* centres the whole section   */
+}
+
+/* ----------------------------------------------------------------
+   TIMELINE – fluid card width via a CSS custom property
+----------------------------------------------------------------- */
+#experience                     { --cardW: 320px; }      /* desktop baseline */
+
+/* card and maths that reference the custom property */
+#experience .timeline-item      { width: var(--cardW); }
+
+#experience .timeline-item:nth-child(odd) {
+  margin-left: calc(50% + 28px);                          /* gap from centre line */
+}
+#experience .timeline-item:nth-child(even){
+  margin-left: calc(50% - (var(--cardW) + 28px));
+}
+
+/* ----------------------------------------------------------------
+   STEP 1 – tablets (≤ 992 px): shrink cards, keep alternation
+----------------------------------------------------------------- */
+@media (max-width: 992px){
+  #experience               { --cardW: 280px; }
+}
+
+/* ----------------------------------------------------------------
+   STEP 2 – phones (≤ 600 px): even smaller cards + tighter line
+----------------------------------------------------------------- */
+@media (max-width: 600px){
+
+  /* a) card width */
+  #experience               { --cardW: 230px; }
+
+  /* b) pull centre-line in a bit so cards never butt edge-to-edge */
+  #experience .timeline::before{
+    left: 48%;
+    height: 100%;
+  }
+
+  /* c) dots track the new line position automatically */
+  #experience .timeline-item:nth-child(odd)::after { left: -44px; }
+  #experience .timeline-item:nth-child(even)::after{
+    left: calc(100% + 44px);
+  }
+}
+
+/* ----------------------------------------------------------------
+   Optional polish – if the heading still feels “stuck” to the edge
+----------------------------------------------------------------- */
+@media (max-width: 600px){
+  .about-title, .about-divider{
+    text-align: center;
+  }
+}
+
+/* ───────────────────────────────────────────────────────────────
+   EXPERIENCE TIMELINE • FIX CENTRE-LINE + DOTS
+──────────────────────────────────────────────────────────────── */
+
+/* 1 ▸ make the line always span the wrapper */
+#experience .timeline::before{
+	top: 0;                /* start at the very top of .timeline          */
+	bottom: 0;             /* extend to the very bottom                   */
+	height: auto;          /* let the browser calculate the length        */
+  }
+  
+  /* 2 ▸ centre every dot on its card (works whatever the card height) */
+  #experience .timeline-item::after{
+	top: 50%;              /* middle of the card                          */
+	transform: translateY(-50%);   /* already in your code, keep it       */
+  }
+  
+  /* 3 ▸ keep horizontal gap in sync with card width                     */
+  /*    declare once, reuse everywhere                                   */
+  #experience{
+	--gap: 28px;           /* distance from card edge to centre-line      */
+	--dot: 16px;           /* diameter of the dot                         */
+  }
+  
+  /* desktop baseline (cardW = 320px) */
+  #experience .timeline-item:nth-child(odd)::after  { left: calc(-1 * var(--gap) - var(--dot)/2); }
+  #experience .timeline-item:nth-child(even)::after { left: calc(100% + var(--gap) - var(--dot)/2); }
+  
+  /* tablet (≤ 992 px)  → cardW = 280px, same gap */
+  @media (max-width: 992px){
+	/* no change needed – the calc() keeps responding automatically      */
+  }
+  
+  /* phone  (≤ 600 px)  → cardW = 230px, gap shrinks from 28 px → 20 px */
+  @media (max-width: 600px){
+	#experience{ --gap: 20px; }        /* new gap                        */
+  
+	/* centre-line was already shifted to 48 % in your earlier rule;
+	   the dot offsets auto-adjust, so no extra edits are needed.       */
+  }
+  
+  /* ---------------------------------------------------------------
+   0.  root variable: where is the vertical timeline?
+--------------------------------------------------------------- */
+#experience{ --lineX: 50%; }          /* desktop & tablets */
+
+/* ---------------------------------------------------------------
+   1.  line always uses the variable
+--------------------------------------------------------------- */
+#experience .timeline::before{
+  left: var(--lineX);
+}
+
+/* ---------------------------------------------------------------
+   2.  cards anchor to the same variable
+--------------------------------------------------------------- */
+#experience .timeline-item:nth-child(odd){
+  margin-left: calc(var(--lineX) + var(--gap));
+}
+#experience .timeline-item:nth-child(even){
+  margin-left: calc(var(--lineX) - (var(--cardW) + var(--gap)));
+}
+
+/* ---------------------------------------------------------------
+   3.  phones: shift the whole system 2 % to the left
+--------------------------------------------------------------- */
+@media (max-width: 600px){
+  #experience{ --lineX: 48%; }        /* line, cards, dots move together */
+}
+
+/* ─────────────────────────────────────────────────────────
+   TIMELINE – description reveal
+───────────────────────────────────────────────────────── */
+
+.timeline-item {
+	cursor: pointer;                     /* lets users know it’s interactive   */
+  }
+  
+  /* hidden by default */
+  .timeline-desc {
+	margin-top: 1rem;
+	padding-left: 1.15rem;               /* indent bullets a touch             */
+	font-size: .85rem;
+	line-height: 1.45;
+	opacity: 0;
+	max-height: 0;
+	overflow: hidden;
+	transition: opacity .35s ease, max-height .35s ease;
+  }
+  
+  /* show on hover (desktops) */
+  .timeline-item:hover  .timeline-desc,
+  .timeline-item:focus-visible .timeline-desc,
+  /* show when JS adds .active (phones) */
+  .timeline-item.active .timeline-desc {
+	opacity: 1;
+	max-height: 600px;                   /* plenty – grows with content        */
+  }
+  
+  /* ─────────────────────────────────────────────────────────
+   FLIP-CARD effect
+───────────────────────────────────────────────────────── */
+
+.timeline-item              { cursor: pointer; perspective: 1000px; }
+
+.flip-card {
+  position: relative;
+  width: 100%;
+  min-height: 180px;               /* keeps front & back equal height        */
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* hover (desktop) */
+.timeline-item:hover .flip-card,
+.timeline-item:focus-visible .flip-card,
+/* tap (mobile) – JS toggles .active on the timeline-item */
+.timeline-item.active .flip-card     { transform: rotateY(180deg); }
+
+/* faces */
+.card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* back side */
+.card-back {
+  transform: rotateY(180deg);
+  text-align: left;
+  font-size: .85rem;
+  line-height: 1.45;
+  padding-inline: .25rem;
+}
+
+/* make bullet list neat */
+.card-back ul       { margin: 0; padding-left: 1.1rem; }
+.card-back li + li  { margin-top: .5rem; }
+
+/* ─────────────────────────────────────────────────────────
+   PHONE-SIZE FIX  –  keep flipped text inside the card
+───────────────────────────────────────────────────────── */
+@media (max-width: 600px){
+
+	/* 1 ▸ taller canvas for both faces */
+	#experience .flip-card{
+	  min-height: 260px;        /* 260–280 px fits all five cards */
+	}
+  
+	/* 2 ▸ tighter copy so it wraps sooner */
+	#experience .card-back{
+	  font-size: .78rem;        /* ≈ 12.5 px on most phones */
+	  padding: .75rem;
+	  overflow-y: auto;         /* enable scroll if ever needed */
+	  word-break: break-word;   /* kill any rogue long token    */
+	}
+  }
+  
+
+
+
 /* ─────────────────────────────────────────────────────────
    PROJECT TILES  •  LARGE IMAGE ON TOP  •  TEXT BELOW
    (OVERRIDES ALL PREVIOUS “.tiles” RULES)
@@ -4676,3 +4995,5 @@ input, select, textarea {
 	.info-block.align-right { text-align: center; }
 	.info-block h3 { margin-top: 1.5rem; }
   }
+
+  

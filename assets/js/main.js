@@ -355,6 +355,21 @@ function updateActiveLink() {
   });
 }
 
+
+  // simple toggle: tap once to open, again to close
+  document.querySelectorAll('#experience .timeline-item')
+          .forEach(card => {
+    card.addEventListener('click', e => {
+      // ignore click if it came from selecting text
+      if (window.getSelection().toString().length) return;
+      card.classList.toggle('active');
+    });
+  });
+
+
+
+
+
 // run on scroll and on load
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('load',  updateActiveLink);
@@ -378,3 +393,4 @@ document.addEventListener('DOMContentLoaded', function() {
   
 	items.forEach(item => observer.observe(item));
   });
+
