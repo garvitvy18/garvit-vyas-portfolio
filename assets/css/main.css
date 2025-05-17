@@ -5131,3 +5131,112 @@ input, select, textarea {
 	}
   }
   
+
+/*──────────────────────────────────────────────
+  📱  MOBILE FIRST-AID  (≤ 600 px)
+  drop this AFTER all other style sheets
+──────────────────────────────────────────────*/
+@media (max-width: 600px) {
+
+	/* 1 ───────── EXPERIENCE TIMELINE ───────── */
+  
+	/* move the vertical line hard-left so cards fit */
+	#experience        { --lineX:   16px;   /* was 48-50 % */ }
+	#experience .timeline::before {
+	  left: var(--lineX);
+	  width: 2px;                /* slimmer line            */
+	}
+  
+	/* stack every card below the line */
+	#experience .timeline-item {
+	  --gap: 12px;               /* gap from line to card   */
+	  --cardW: auto;             /* let it be 100 % width   */
+	  width: calc(100% - (var(--lineX) + var(--gap)));
+	  margin: 1.75rem 0 1.75rem calc(var(--lineX) + var(--gap)) !important;
+	}
+  
+	/* keep the dot glued to the new line */
+	#experience .timeline-item::after {
+	  left: calc(-1 * var(--gap) - 8px);   /* 8 px = dot-radius */
+	}
+  
+	/* optional: shrink heading sizes so text never spills */
+	#experience .timeline-title     { font-size: 1rem; }
+	#experience .timeline-company,
+	#experience .timeline-location,
+	#experience .timeline-desc      { font-size: .8rem; }
+  
+	/* 2 ───────── PROJECT & SKILL GRIDS ───────── */
+  
+	/* force ONE column and kill heavy side-margins */
+	.tiles,
+	.skills-grid,
+	.cert-grid {
+	  grid-template-columns: 1fr !important;
+	  margin-inline: 1rem !important;
+	}
+  
+	/* 3 ───────── GLOBAL SAFETY NET ───────── */
+  
+	html, body               { max-width: 100%; overflow-x: hidden; }
+	img, svg, video          { max-width: 100%; height: auto; }
+  
+	/* space-saver for the sticky nav */
+	body { padding-top: calc(var(--navbar-height, 2.75rem) + 0.5rem); }
+  
+  }
+  
+  /* ─────────────────────────  HERO IMAGE ON PHONES  ─────────────────────── */
+@media (max-width:600px){
+
+	/* 1 ▸ guarantee the image layer shows */
+	#banner-wrapper #bg{
+	  display:block !important;          /* revive the <div id="bg">          */
+	  background-image:url("../images/bg.jpg");   /* make sure the path is right */
+	  height:100%;                       /* if a JS calc ever zeroes it out   */
+	}
+  
+	/* 2 ▸ fallback: let #banner itself carry the picture too                 */
+	#banner{
+	  background-image:url("../../images/banner.jpg"); /* existing desktop src */
+	  background-size:cover;
+	  background-position:center;
+	  background-attachment:scroll;      /* fixed → scroll prevents jank      */
+	}
+  }
+  
+  /*─────────────────────────────────────────────────────────────
+  HERO  ▸  PERPETUAL PAN  (works at every screen width)
+─────────────────────────────────────────────────────────────*/
+
+/* kill the old transform-based animation */
+#banner-wrapper #bg {
+	width:100% !important;           /* no need for 200-300 % anymore  */
+	
+  }
+  
+  /* new, lightweight background-position scroller */
+  @keyframes bgScroll {
+	from { background-position: 0 0; }          /* start at left edge  */
+	to   { background-position: -2250px 0; }    /* slide one image-width */
+  }
+  
+  #banner-wrapper #bg {
+	background-image: url("../images/bg.jpg");
+	background-repeat: repeat-x;
+	background-size: 2250px auto;    /* ← the same width we scroll by   */
+	animation: bgScroll 60s linear infinite;
+  }
+  
+  /* tiny phones (≤ 600 px) – shorten the travel so the step is invisible */
+  @media (max-width:600px){
+	@keyframes bgScrollPhone {
+	  from { background-position: 0 0; }
+	  to   { background-position: -1500px 0; }  /* smaller file you load here */
+	}
+	#banner-wrapper #bg{
+	  background-size:1500px auto;
+	  animation:bgScrollPhone 40s linear infinite;
+	}
+  }
+  
