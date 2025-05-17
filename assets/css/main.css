@@ -5240,3 +5240,35 @@ input, select, textarea {
 	}
   }
   
+  /*──────────────────────────────────────────────────────────
+  LOCK SITE TO DARK PALETTE (ignore OS light-mode)
+  — paste this after your last stylesheet —
+──────────────────────────────────────────────────────────*/
+
+/* 1 ▸ stop browsers auto-recolouring form controls */
+html{ color-scheme: dark; }
+
+/* 2 ▸ undo every light-mode override you set earlier */
+@media (prefers-color-scheme: light){
+
+  /* -- custom variables back to dark values ---------- */
+  :root{
+    --navbar-bg:         #242943;
+    --skill-tile-bg:     #1f233b;
+    --skill-tile-border: rgba(255,255,255,.07);
+    --card-bg:           #1e223b;        /* project + cert tiles */
+  }
+
+  /* -- components that were hard-coded to light colours */
+  body,
+  #main,
+  #navbar,
+  #header,
+  .tiles article,
+  .skill-card,
+  .cert-card,
+  #experience .timeline-item{
+    background-color:#242943 !important;
+    color:#ffffff     !important;
+  }
+}
