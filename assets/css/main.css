@@ -4792,108 +4792,11 @@ input, select, textarea {
     background-image:none !important;
 }
 
-/* ─────────────────────────────────────────────────────────
-   SKILLS & CERTIFICATIONS GRID
-───────────────────────────────────────────────────────── */
-#skills .skills-grid{
-	--gap:2rem;
-	display:grid;
-	grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); /* responsive */
-	gap:var(--gap);
-	margin-top:2rem;
-	/* Make all grid tracks equal height so card bottoms align */
-	grid-auto-rows:1fr;
-  }
   
-  /* Individual card */
-  .skill-card{
-	background:#2e3458;                 /* lighter variant of #242943 */
-	border:1px solid rgba(255,255,255,.05);
-	border-radius:0.75rem;
-	padding:1.5rem;
-	display:flex;                       /* enables equal height flex column */
-	flex-direction:column;
-	transition:transform .2s ease, box-shadow .2s ease;
-  }
-  .skill-card:hover{
-	transform:translateY(-4px);
-	box-shadow:0 8px 22px rgba(0,0,0,.35);
-  }
-  
-  /* Card heading */
-  .skill-card h3{
-	display:flex;
-	align-items:center;
-	gap:0.6rem;
-	font-size:1.15rem;
-	font-weight:600;
-	margin:0 0 0.9rem;
-  }
-  
-  /* Tag chips */
-  .skill-tags{
-	list-style:none;
-	margin:0;
-	padding:0;
-	display:flex;
-	flex-wrap:wrap;
-	gap:0.5rem;
-  }
-  .skill-tags li{
-	background:#384070;
-	border-radius:9999px;
-	padding:0.28rem 0.85rem;
-	font-size:0.85rem;
-	white-space:nowrap;
-  }
-  
-  /* Certifications list matches chip styling but full‑width links */
-  .cert-list{
-	list-style:none;
-	margin:0;
-	padding:0;
-	display:flex;
-	flex-direction:column;
-	gap:0.6rem;
-  }
-  .cert-list a{
-	display:block;
-	width:100%;
-	padding:0.55rem 1rem;
-	background:#384070;
-	border-radius:0.5rem;
-	text-decoration:none;
-	font-size:0.9rem;
-	transition:transform .15s ease, background .15s ease;
-  }
-  .cert-list a:hover{
-	transform:translateX(4px);
-	background:#3f4a8a;
-  }
-  .cert-list a:focus{
-	outline:2px solid #6bd4ff;
-	outline-offset:2px;
-  }
-  
-  /* Optional: light‑mode overrides */
-  @media (prefers-color-scheme: light){
-	.skill-card{ background:#f3f6ff; color:#242943; }
-	.skill-tags li,
-	.cert-list a{ background:#e5e9ff; }
-  }
-  
-
-  /* make cert‑card span all columns and sit in the middle */
-.skills-grid .cert-card {
-	grid-column: 1 / -1;      /* span from first to last track */
-	max-width: 320px;         /* match your normal card width */
-	margin: 0 auto;           /* center within that full‑width cell */
-  }
-  
-  /* ─────────────  FOOTER REVAMP  ───────────── */
+  /* ───────────────────────────  FOOTER / CONTACT  ─────────────────────────── */
 .footer-revamp {
 	padding: 4rem 2rem;
-	color: #fff;                     /* keeps existing dark theme */
+	color: #fff;                 /* inherits your dark palette */
 	background: inherit;
 	font-family: "Space Mono", monospace;
   }
@@ -4903,64 +4806,45 @@ input, select, textarea {
 	margin: 0 auto;
   }
   
-  /* --- QUICK LINKS --- */
-  .quick-links {
+  /* -----  SECTION HEADING  ----- */
+  .contact-heading {
 	text-align: center;
-	margin-bottom: 3.5rem;
-  }
-  
-  .quick-links h2 {
 	font-size: 3rem;
-	letter-spacing: 0.04em;
-	margin: 0 0 1.25rem;
-  }
-  
-  .quick-nav {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	gap: 2.8rem;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-  }
-  
-  .quick-nav a {
-	text-decoration: none;
-	text-transform: uppercase;
-	font-size: 1.25rem;
+	margin: 0 0 2.5rem;
 	letter-spacing: 0.05em;
-	transition: opacity 0.2s ease;
   }
   
-  .quick-nav a:hover,
-  .quick-nav a:focus {
-	opacity: 0.7;
-  }
-  
-  /* --- CONTACT | ADDRESS STRIP --- */
-  .info-grid {
+  /* -----  EMAIL & PHONE STRIP  ----- */
+  .contact-details {
 	display: flex;
 	justify-content: space-between;
-	align-items: flex-start;
+	align-items: center;
 	gap: 2rem;
 	margin-bottom: 3rem;
   }
   
-  .info-block h3 {
-	font-size: 2.2rem;
-	margin: 0 0 1rem;
-	letter-spacing: 0.04em;
+  .contact-details p {
+	margin: 0;
+	font-size: 1.6rem;           /* bigger & more prominent */
+	letter-spacing: 0.03em;
   }
   
-  .info-block p {
-	margin: 0.25rem 0;
-	font-size: 1.15rem;
+  .contact-details .email   { text-align: left;  flex: 1; }
+  .contact-details .phone   { text-align: right; flex: 1; }
+  
+  /* ensure links inherit colour and hover nicely */
+  .contact-details a {
+	color: inherit;
+	text-decoration: none;
+	border-bottom: 2px solid transparent;
+	transition: border-color 0.2s ease;
+  }
+  .contact-details a:hover,
+  .contact-details a:focus {
+	border-color: currentColor;
   }
   
-  .info-block.align-right { text-align: right; }
-  
-  /* --- SOCIAL ICONS --- */
+  /* -----  SOCIAL ICONS  ----- */
   .social {
 	display: flex;
 	justify-content: center;
@@ -4972,28 +4856,278 @@ input, select, textarea {
 	font-size: 2.2rem;
 	transition: opacity 0.2s ease;
   }
-  
   .social .icon:hover,
   .social .icon:focus {
 	opacity: 0.7;
   }
   
-  /* --- COPYRIGHT --- */
+  /* -----  COPYRIGHT  ----- */
   .footer-revamp .copyright {
 	text-align: center;
 	font-size: 1.05rem;
 	letter-spacing: 0.02em;
 	margin: 0;
+	list-style: none;
+	padding: 0;
   }
   
-  /* ---------- RESPONSIVE TWEAKS ---------- */
-  @media (max-width: 768px) {
-	.info-grid {
+  /* -----  RESPONSIVE  (< 600 px)  ----- */
+  @media (max-width: 600px) {
+	.contact-details {
 	  flex-direction: column;
 	  text-align: center;
 	}
-	.info-block.align-right { text-align: center; }
-	.info-block h3 { margin-top: 1.5rem; }
+	.contact-details .email,
+	.contact-details .phone {
+	  text-align: center;
+	}
   }
+  
+  /* ───── override .special so section titles stay flush-left ───── */
+#projects.special,
+#projects.special .experience-container {
+    text-align: left;            /* cancel the centre-alignment */
+}
 
+#projects .about-title,
+#projects .about-divider {
+    margin-left: 0;              /* ensure they start at the left edge */
+}
+
+/* ───────── SKILLS & CERTIFICATIONS headings align left ───────── */
+#skills.special,
+#certifications.special,
+#skills.special .experience-container,
+#certifications.special .experience-container {
+    text-align: left;           /* undo .special’s default centering */
+}
+
+/* keep the heading + divider flush to the left edge */
+#skills .about-title,
+#skills .about-divider,
+#certifications .about-title,
+#certifications .about-divider {
+    margin-left: 0;
+}
+
+/*─────────────────────────────────────────────
+  SKILLS SECTION  ·  big, clean tile cards
+──────────────────────────────────────────────*/
+
+/* 1. Heading & divider stay left-aligned */
+#skills.special {
+	text-align: left;                 /* override .special’s default */
+  }
+  #skills .major h2,
+  #skills .major + hr {
+	margin-left: 0;
+  }
+  
+  /* 2. Colour palette (auto-swaps for light mode) */
+  :root{
+	--skill-tile-bg:     #1f233b;
+	--skill-tile-border: rgba(255,255,255,.07);
+  }
+  @media (prefers-color-scheme: light){
+	:root{
+	  --skill-tile-bg:#fff;
+	  --skill-tile-border:#ccd1e6;
+	}
+  }
+  
+  /* 3. Responsive grid that mirrors your project tiles */
+  .skills-grid{
+	--gap:2rem;                        /* same gap as .tiles */
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+	gap:var(--gap);
+	list-style:none;
+	margin:40px;                       /* matches .tiles wrapper */
+	padding:0;
+  }
+  
+  /* 4. Individual tile cards */
+  .skill-card{
+	background:var(--skill-tile-bg);
+	border:1px solid var(--skill-tile-border);
+	border-radius:1rem;
+	padding:2.5rem 1.5rem 2rem;
+	min-height:260px;                 /* gives a solid “box” feel */
+	display:flex;
+	flex-direction:column;
+	align-items:center;
+	text-align:center;
+	box-shadow:0 2px 4px rgba(0,0,0,.15);
+	transition:transform .22s ease, box-shadow .22s ease;
+  }
+  .skill-card:hover{
+	transform:translateY(-6px);
+	box-shadow:0 12px 18px rgba(0,0,0,.3);
+  }
+  
+  /* 5. Tile heading */
+  .skill-card h3{
+	margin:0 0 1.6rem;
+	font-size:1.25rem;
+	font-weight:700;
+	letter-spacing:.02em;
+  }
+  
+  /* 6. Icon area */
+  .icon-set{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	gap:1.2rem;
+  }
+  .icon-set i{
+	font-size:3rem;
+	line-height:1;
+  }
+  .icon-set img{
+	height:56px;
+	width:auto;
+  }
+  
+  /* 7. Hover lifts **individual** icons */
+  .icon-set i,
+  .icon-set img{
+	transition:transform .18s ease, filter .18s ease;
+  }
+  .icon-set i:hover,
+  .icon-set img:hover{
+	transform:translateY(-6px) scale(1.1);
+	filter:brightness(1.25);
+  }
+  
+  /* 8. Mobile tweaks (≤ 600 px) */
+  @media (max-width:600px){
+	.skills-grid{ --gap:1.2rem; margin:20px; }
+	.skill-card{ padding:1.75rem 1rem; min-height:auto; }
+	.icon-set i{ font-size:2.2rem; }
+	.icon-set img{ height:40px; }
+  }
+  
+  /* was: margin:40px; */
+.skills-grid{
+	--gap:2rem;
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+	gap:var(--gap);
+  
+	/* Only side + bottom spacing, skinny top gap */
+	margin:1.25rem 40px 40px;   /* ⇢ 1.25 rem top, 40 px sides & bottom */
+	padding:0;
+  }
+  
+ /* ───────────────────────────────
+   ICON TOOLTIPS – scoped fix
+──────────────────────────────── */
+.icon-set .icon { position: relative; }
+
+/* bubble */
+.icon-set .icon::after{
+  content: attr(title);
+  /* …same styles… */
+}
+
+/* small arrow */
+.icon-set .icon::before{
+  content: "";
+  /* …same styles… */
+}
+
+/* reveal on hover / focus */
+.icon-set .icon:hover::after,
+.icon-set .icon:hover::before,
+.icon-set .icon:focus::after,
+.icon-set .icon:focus::before{
+  opacity: 1;
+}
+
+
+/* ───────────────────────────────────────────
+   CERTIFICATION  •  SQUARE CARDS  •  GRID
+─────────────────────────────────────────── */
+
+:root{
+	--card-gap:2rem;          /* same rhythm as .tiles            */
+	--card-bg:#1e223b;        /* identical to project-card colour */
+  }
+  
+  /* GRID WRAPPER */
+  .cert-grid{
+	display:grid;
+	grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+	gap:var(--card-gap);
+	margin:40px;
+	padding:0;
+	list-style:none;
+  }
+  
+  /* LI just holds the anchor */
+  .cert-grid li{display:block;}
+  
+  /* FULLY-CLICKABLE CARD */
+  .cert-card{
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	height:100%;
+	aspect-ratio:1/1;                 /* perfect square */
+	background:var(--card-bg);
+	border-radius:0.75rem;
+	overflow:hidden;
+	box-shadow:0 3px 8px rgba(0,0,0,.28);
+	transition:transform .25s ease, box-shadow .25s ease;
+	text-decoration:none;
+  }
+  
+  /* hover lift */
+  .cert-card:hover{
+	transform:translateY(-6px);
+	box-shadow:0 8px 20px rgba(0,0,0,.45);
+  }
+  
+  /* IMAGE AREA */
+  .cert-image{
+	flex:1 1 auto;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	padding:1.2rem;
+  }
+  
+  .cert-image img{
+	max-width:100%;
+	max-height:100%;
+	object-fit:contain;
+  }
+  
+  /* TITLE BAR */
+  .cert-title{
+	flex:0 0 auto;
+	margin:0;
+	padding:.85rem .9rem 1rem;
+	font-size:.9rem;
+	line-height:1.35;
+	text-align:center;
+	color:#fff;
+	letter-spacing:.02em;
+  }
+  
+  /* BREAKPOINTS – mirror project-tile behaviour */
+  @media(max-width:980px){
+	.cert-grid{
+	  grid-template-columns:repeat(2,minmax(0,1fr));
+	  gap:1.6rem;
+	}
+  }
+  @media(max-width:640px){
+	.cert-grid{
+	  grid-template-columns:1fr;
+	  gap:1.25rem;
+	  margin:24px;
+	}
+  }
   
