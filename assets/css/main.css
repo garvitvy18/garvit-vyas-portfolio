@@ -5272,3 +5272,134 @@ html{ color-scheme: dark; }
     color:#ffffff     !important;
   }
 }
+
+/*──────────────────────────────────────────────
+  MOBILE (≤ 600 px) – keep every dot on the left
+──────────────────────────────────────────────*/
+@media (max-width: 600px){
+
+	/* ✏️  override BOTH nth-child rules that still fire on phones   */
+	#experience .timeline-item::after,
+	#experience .timeline-item:nth-child(even)::after,
+	#experience .timeline-item:nth-child(odd)::after{
+		left: calc(-1 * var(--gap) - 8px) !important;   /* 8 px = dot-radius */
+	}
+  }
+  
+/*──────────────────────────────────────────────
+  MOBILE NAV • tidy the “More ▾” toggle
+──────────────────────────────────────────────*/
+@media (max-width: 600px){
+
+	/* 1 ▸ once the dropdown is open, hide the “More ▾” row itself */
+	.nav-links.open .mobile-more{ display:none; }
+  
+	/* 2 ▸ kill the white outline/box that appears around the toggle */
+	.nav-toggle,
+	.nav-toggle.active{                 /* if your JS adds .active          */
+	  background:none !important;       /* remove white fill                */
+	  border:0        !important;       /* remove any outline/box-shadow     */
+	  color:#fff      !important;       /* keep normal link colour           */
+	}
+  }
+
+/*──────────────────────────────────────────────
+  NAV BAR – remove white box around “More ▾”
+  (paste after your last stylesheet)
+──────────────────────────────────────────────*/
+.nav-toggle,
+.nav-toggle:hover,
+.nav-toggle:focus,
+.nav-toggle.active{
+    border: none !important;     /* kill the white outline          */
+    background: none !important; /* just in case a fill sneaks in    */
+    box-shadow: none !important; /* remove any residual shadow glow  */
+}
+
+/*──────────────────────────────────────────────
+  NAV BAR  – make “More ▾” look like a normal link
+──────────────────────────────────────────────*/
+#navbar .nav-toggle{
+    /* visual reset */
+    border:      0       !important;
+    background:  none    !important;
+    box-shadow:  none    !important;
+
+    /* copy the anchor styles */
+    display:     block;
+    padding:     0 0.75rem;          /* same as .nav-links a */
+    height:      var(--navbar-height);
+    line-height: var(--navbar-height);
+    color:       #fff;
+    font-weight: 600;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+
+    /* keep caret snug with text */
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+}
+
+/* caret size tweaks so it doesn’t sit lower */
+#navbar .nav-toggle svg,
+#navbar .nav-toggle i,
+#navbar .nav-toggle::after{
+    font-size: .6em;
+    line-height: 1;
+}
+
+/*────────────────────────────────────────────────────────
+  HERO  ▸  keep overlay inside the banner on small screens
+────────────────────────────────────────────────────────*/
+@media (max-width: 600px){
+
+	/* 1 ▸ clip everything to the banner’s height               */
+	#banner,
+	#banner-wrapper{ overflow:hidden; }
+  
+	/* 2 ▸ scale the diagonal SVG so its bottom edge ends where
+		   the banner ends (no “leak” into the next section)    */
+	#banner-wrapper #overlay{
+		/* first layer = repeating PNG pattern → unchanged
+		   second layer = overlay.svg         → scale to 100 % height */
+		background-size: auto 100%, cover;
+		background-position: 0 0, center top;
+		height:100%;          /* be explicit so it can’t over-run */
+		max-height:100%;
+	}
+  }
+
+ /*────────────────────────────────────────────────────────
+  HERO ▸ overlay never leaks on ultra-narrow screens
+────────────────────────────────────────────────────────*/
+
+/* phones ≤ 480 px ------------------------------------------------------*/
+@media (max-width: 480px){
+
+	/* keep everything clipped to the banner box */
+	#banner, #banner-wrapper{ overflow:hidden; }
+  
+	/* make the SVG 20 % taller → its diagonal ends lower down */
+	#banner-wrapper #overlay{
+		background-size: auto 120%, cover;   /*   ↑  pattern | SVG  */
+		background-position: 0 0, center top;
+	}
+  }
+  
+  /* tiny phones ≤ 360 px -------------------------------------------------*/
+  @media (max-width: 360px){
+  
+	/* need a bit more – scale to 140 % of banner height */
+	#banner-wrapper #overlay{
+		background-size: auto 140%, cover;
+	}
+  }
+/*────────────────────────────────────────────────────────
+  HERO ▸ disable diagonal overlay on small screens
+────────────────────────────────────────────────────────*/
+@media (max-width: 600px){
+    /* hide the pattern + SVG layer entirely */
+    #banner-wrapper #overlay{ display:none !important; }
+}
+  
