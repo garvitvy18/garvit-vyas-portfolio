@@ -9,9 +9,11 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- inline tweaks: (legacy) grid cards, skill pills, + NEW timeline overrides -->
+  <!-- ────────────────────────────────────────────────────
+       INLINE OVERRIDES
+  ──────────────────────────────────────────────────── -->
   <style>
-    /* ▸▸ legacy grid cards (unused now, safe to keep) ▸▸ */
+    /* ▸▸ legacy grid cards (unused) ▸▸ */
     .exp-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
     .exp-card{
       width:220px;padding:1.4rem;border-radius:8px;text-align:center;
@@ -20,8 +22,6 @@
     }
     .exp-card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
     .exp-card img{height:48px;width:auto;margin-bottom:.75rem}
-    .exp-role{font-weight:600;font-size:1rem;margin:0 0 .25rem}
-    .exp-date{font-size:.85rem;color:#666}
 
     /* ▸▸ Skill pill boxes ▸▸ */
     #skills .skill-category{margin-bottom:1.5rem;text-align:center}
@@ -31,62 +31,82 @@
       background:#e8ecff;color:#1a1d3a;white-space:nowrap
     }
 
-    /* ▸▸ NEW TIMELINE OVERRIDES ▸▸ */
+    /* ▸▸ Timeline cards ▸▸ */
     #experience .timeline-item{
-      background:#ffffff !important;          /* white card */
-      color:#242943;                          /* dark text */
-      border-radius:10px;
+      background:#ffffff !important;
+      color:#242943;border-radius:10px;
     }
     #experience .timeline-item:hover{
       box-shadow:0 8px 20px rgba(0,0,0,.25);
     }
-
-    /* bigger logos */
-    #experience .exp-logo{
-      width:96px;height:auto;margin:0 auto 0.9rem;
-    }
-
-    /* back-face = read-more prompt */
+    #experience .exp-logo{width:96px;height:auto;margin:0 auto .9rem}
     #experience .read-more{
-      display:flex;align-items:center;justify-content:center;
-      background:#ffffff;height:100%;
+      display:flex;align-items:center;justify-content:center;background:#fff;height:100%;
     }
     #experience .read-more span{
-      font-weight:600;font-size:1rem;
-      padding:.6rem 1.4rem;border:2px solid #242943;border-radius:4px;
-      transition:all .2s ease;
+      font-weight:600;font-size:1rem;padding:.6rem 1.4rem;
+      border:2px solid #242943;border-radius:4px;transition:.2s;
     }
     #experience .timeline-item:hover .read-more span,
     #experience .timeline-item:focus-visible .read-more span{
-      background:#242943;color:#ffffff;
+      background:#242943;color:#fff;
+    }
+    #experience .timeline-item .link.primary{position:absolute;inset:0;border:0;z-index:5}
+
+    /* ▸▸ Hero subtitle: one line & centred ▸▸ */
+    .animate-subtitle{
+      white-space:nowrap;
+      display:inline-block;
+      margin:0 auto;
     }
 
-    /* make the whole card a link */
-    #experience .timeline-item .link.primary{
-      position:absolute;inset:0;border:0;z-index:5;
+    /* ▸▸ PROJECT TILES → white cards ▸▸ */
+    .tiles article{
+      background:#ffffff !important;
+      color:#242943 !important;
     }
+    .tiles article:hover{background:#ffffff !important;}
+    .tiles article p.desc{color:#444;}
+    .tiles article .tags span{background:#e8ecff;color:#1a1d3a;}
 
-    /* ▸▸ ONE-LINE HERO SUBTITLE ▸▸ */
-    .animate-subtitle{white-space:nowrap;}   /* <── NEW */
+    /* ▸▸ RÉSUMÉ SECTION ▸▸ */
+    #resume{padding:4rem 2rem;}
+    #resume .resume-container{max-width:900px;margin:0 auto;text-align:center;}
+    .resume-card{
+      display:flex;flex-direction:column;align-items:center;gap:1.5rem;
+      padding:2.5rem 2rem;background:#fff;border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.1);transition:.3s;color:#242943;
+    }
+    .resume-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.25);}
+    .resume-card img{width:160px;height:auto;border:1px solid #ddd;}
+    .resume-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+    .resume-btn{
+      display:inline-block;padding:.65rem 1.5rem;font-size:.85rem;font-weight:600;
+      text-transform:uppercase;letter-spacing:.05em;border-radius:4px;border:0;cursor:pointer;
+      transition:background .2s;
+    }
+    .view-btn{background:#242943;color:#fff;}
+    .view-btn:hover{background:#1b3564;}
+    .download-btn{background:#e8ecff;color:#1a1d3a;}
+    .download-btn:hover{background:#cfd8ff;}
+
+    /* ▸▸ full-screen modal ▸▸ */
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;
+      background:rgba(0,0,0,.85);z-index:10000;padding:2rem;}
+    .modal.open{display:flex;}
+    .modal iframe{width:100%;height:100%;border:0;border-radius:6px;max-width:1000px;}
+    .modal-close{
+      position:absolute;top:1rem;right:1rem;background:#fff;border:0;font-size:1.25rem;
+      line-height:1;padding:.25rem .6rem;border-radius:4px;cursor:pointer;font-weight:700;
+    }
+    .modal-close:hover{background:#e8ecff;}
+
+    /* ▸▸ Columbia-blue backdrop ▸▸ */
+    :root{ --columbia:#1D4F91; }
+    body,#wrapper,#main,#navbar,#header,#footer,#menu,#banner:after,
+    .spotlights>section,#contact>.inner>:nth-child(2n-1)
+      { background:var(--columbia)!important; }
   </style>
-  <!-- Columbia-blue background swap  ▸  paste this just BEFORE </head> -->
-<style>
-  :root{ --columbia:#1D4F91; }           /* pick your exact Columbia blue */
-
-  /* large dark panels that need recolouring */
-  body,
-  #wrapper,
-  #main,
-  #navbar,
-  #header,
-  #footer,
-  #menu,
-  #banner:after,                         /* hero overlay */
-  .spotlights > section,
-  #contact > .inner > :nth-child(2n-1)   /* contact's left column strip */
-  { background:var(--columbia)!important; }
-</style>
-
 </head>
 
 <script>window.addEventListener('load',()=>{document.body.classList.remove('is-preload');});</script>
@@ -100,13 +120,11 @@
     <ul class="nav-links">
       <li><a href="#banner">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
-
-      <!-- mobile toggle -->
       <li class="mobile-more"><button class="nav-toggle" aria-expanded="false">MORE ▾</button></li>
-
       <li class="extra"><a href="#experience">EXPERIENCE</a></li>
       <li class="extra"><a href="#projects">PROJECTS</a></li>
       <li class="extra"><a href="#skills">SKILLS</a></li>
+      <li class="extra"><a href="#resume">RESUME</a></li>
       <li class="extra"><a href="#contact">CONTACT</a></li>
     </ul>
   </nav>
@@ -171,24 +189,21 @@
   </div>
 </section>
 
-<!-- ▸ EXPERIENCE (timeline) -->
+<!-- ▸ EXPERIENCE -->
 <section id="experience" class="experience-section">
   <div class="experience-container">
     <h2 class="about-title">EXPERIENCE</h2><hr class="about-divider" />
 
     <div class="timeline">
-
       <!-- Arm ------------------------------------------------------------ -->
       <div class="timeline-item">
         <div class="flip-card">
-          <!-- front -->
           <div class="card-face card-front" style="text-align:center">
             <img class="exp-logo" src="assets/images/arm.png" alt="Arm logo">
             <p class="timeline-title">SoC Engineer Intern</p>
             <p class="timeline-company">Arm • Chandler, AZ</p>
             <span class="timeline-date">May 2025 – Present</span>
           </div>
-          <!-- back -->
           <div class="card-face card-back read-more">
             <span>Read&nbsp;more&nbsp;→</span>
           </div>
@@ -227,9 +242,8 @@
         </div>
         <a class="link primary" href="exp-samsung.html"></a>
       </div>
-
-    </div><!-- /.timeline -->
-  </div><!-- /.experience-container -->
+    </div>
+  </div>
 </section>
 
 <!-- ▸ PROJECTS -->
@@ -242,12 +256,12 @@
       <span class="image"><img src="assets/images/ringnoc-thumb.png" alt="Ring NoC"></span>
       <div class="content">
         <h3>Ring NoC on ESP</h3>
-        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area 12&nbsp;% and latency 3&nbsp;%.</p>
+        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area&nbsp;12 % and latency&nbsp;3 %.</p>
         <div class="tags"><span>SystemVerilog</span><span>FPGA</span></div>
       </div>
       <a href="project-1.html" class="link primary"></a>
     </article>
-    <!-- more tiles here … -->
+    <!-- add more <article> blocks as needed -->
   </div>
 </section>
 
@@ -292,16 +306,28 @@
         <span class="skill-pill">Confluence</span>
       </div>
     </div>
+  </div>
+</section>
 
+<!-- ▸ RESUME -->
+<section id="resume">
+  <div class="resume-container">
+    <h2 class="about-title">RÉSUMÉ</h2><hr class="about-divider" />
+    <div class="resume-card">
+      <img src="assets/images/resume-thumb.png" alt="Résumé thumbnail">
+      <p>A concise one-page snapshot of my verification &amp; RTL experience.</p>
+      <div class="resume-actions">
+        <button class="resume-btn view-btn" id="openModal">View PDF</button>
+        <a href="Garvit Vyas_resume_temp.pdf" class="resume-btn download-btn" download>Download PDF</a>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ▸ FOOTER -->
 <footer id="footer" class="footer-revamp">
   <div class="footer-inner">
-
     <a id="contact" tabindex="-1" aria-hidden="true"></a>
-
     <div class="contact-header"><h2 class="about-title">CONTACT</h2><hr class="about-divider" /></div>
     <div class="contact-details">
       <p class="email"><a href="mailto:gv2361@columbia.edu">gv2361@columbia.edu</a></p>
@@ -317,6 +343,12 @@
   </div>
 </footer>
 
+<!-- ▸ MODAL PDF VIEWER -->
+<div class="modal" id="resumeModal" aria-hidden="true">
+  <button class="modal-close" aria-label="Close résumé" id="closeModal">&times;</button>
+  <iframe src="Garvit Vyas_resume_temp.pdf#toolbar=0&view=fitH" title="Résumé PDF"></iframe>
+</div>
+
 <!-- ▸ template scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
@@ -326,23 +358,33 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- mobile menu toggle -->
+<!-- extras: mobile nav + résumé modal -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
+
+  /* mobile “More ▾” toggle */
   const togg=document.querySelector('.nav-toggle'),
         nav=document.querySelector('.nav-links');
   togg.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    togg.classList.toggle('open',open);
-    togg.setAttribute('aria-expanded',open);
+      const open=nav.classList.toggle('open');
+      togg.setAttribute('aria-expanded',open);
   });
   nav.addEventListener('click',e=>{
-    if(e.target.tagName==='A'&&nav.classList.contains('open')){
-      nav.classList.remove('open');
-      togg.classList.remove('open');
-      togg.setAttribute('aria-expanded','false');
-    }
+      if(e.target.tagName==='A'&&nav.classList.contains('open')){
+          nav.classList.remove('open');
+          togg.setAttribute('aria-expanded','false');
+      }
   });
+
+  /* résumé modal */
+  const modal   =document.getElementById('resumeModal'),
+        openBtn =document.getElementById('openModal'),
+        closeBtn=document.getElementById('closeModal');
+  openBtn.addEventListener('click',()=>{ modal.classList.add('open');modal.setAttribute('aria-hidden','false');});
+  closeBtn.addEventListener('click',close);
+  modal.addEventListener('click',e=>{ if(e.target===modal) close();});
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape') close();});
+  function close(){ modal.classList.remove('open');modal.setAttribute('aria-hidden','true');}
 });
 </script>
 
