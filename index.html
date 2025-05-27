@@ -46,9 +46,20 @@
     #experience .timeline-item:focus-visible .read-more span{background:#242943;color:#fff}
     #experience .timeline-item .link.primary{position:absolute;inset:0;border:0;z-index:5}
 
-    /* ▸▸ PROJECT TILES → white cards ▸▸ */
-    .tiles article{background:#ffffff !important;color:#242943 !important}
-    .tiles article:hover{background:#ffffff !important}
+    /* ▸▸ PROJECT TILES – force white cards & dark text ▸▸ */
+    .tiles article{
+      position:relative;
+      background:#ffffff !important;
+      color:#242943 !important;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      transition:transform .2s,box-shadow .2s;
+    }
+    .tiles article:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
+    /* remove original dark-overlay pseudo element some templates add */
+    .tiles article:before{display:none !important}
+    /* text inside the card */
+    .tiles article .content h3,
+    .tiles article .content p{color:#242943}
     .tiles article p.desc{color:#444}
     .tiles article .tags span{background:#e8ecff;color:#1a1d3a}
 
@@ -232,7 +243,7 @@
       <span class="image"><img src="assets/images/ringnoc-thumb.png" alt="Ring NoC"></span>
       <div class="content">
         <h3>Ring NoC on ESP</h3>
-        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area&nbsp;12 % and latency&nbsp;3 %.</p>
+        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area&nbsp;12 % and latency&nbsp;3 %.</p>
         <div class="tags"><span>SystemVerilog</span><span>FPGA</span></div>
       </div>
       <a href="project-1.html" class="link primary"></a>
@@ -276,9 +287,8 @@
   <div class="resume-container">
     <h2 class="about-title">RÉSUMÉ</h2><hr class="about-divider" />
     <div class="resume-card">
-      <!-- same icon as navbar, used as thumbnail -->
       <span class="icon solid fa-file-alt resume-thumb" aria-hidden="true"></span>
-      <p>Here's my updated Resume as of May 2025</p>
+      <p>Here's my updated&nbsp;Résumé as of&nbsp;May&nbsp;2025</p>
       <div class="resume-actions">
         <button class="resume-btn view-btn" id="openModal">View PDF</button>
         <a href="Garvit Vyas_resume_temp.pdf" class="resume-btn download-btn" download>Download PDF</a>
