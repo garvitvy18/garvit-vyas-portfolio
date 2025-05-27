@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <title>Garvit Vyas | SoC & ASIC Engineer Portfolio</title>
   <meta charset="utf-8" />
+  <title>Garvit Vyas | SoC & ASIC Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- template styles -->
@@ -11,26 +11,29 @@
 
   <!-- small inline tweaks -->
   <style>
-    /* logo cards in experience grid */
+    /* ▸▸ Experience logo cards ▸▸ */
     .exp-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
     .exp-card{
-      width:220px;text-align:center;padding:1.2rem;border-radius:8px;
+      width:220px;padding:1.4rem;border-radius:8px;text-align:center;
       background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.08);
       transition:transform .2s,box-shadow .2s
     }
-    .exp-card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
+    .exp-card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.12);}
     .exp-card img{height:48px;width:auto;margin-bottom:.75rem}
-    .exp-card h3{font-size:1rem;margin:0 0 .25rem}
-    .exp-card span{font-size:.85rem;color:#666}
+    .exp-role{font-weight:600;font-size:1rem;margin:0 0 .25rem}
+    .exp-date{font-size:.85rem;color:#666}
     .exp-link{display:block;color:inherit;text-decoration:none}
+
+    /* ▸▸ Plain skills list ▸▸ */
+    .plain-skills{list-style:none;padding:0;margin:1.5rem auto 0;max-width:720px}
+    .plain-skills li{margin:.5rem 0;font-size:1rem;line-height:1.4}
   </style>
 </head>
 
-<!-- remove preload blur -->
+<!-- remove blur after load -->
 <script>window.addEventListener('load',()=>{document.body.classList.remove('is-preload');});</script>
 
 <body class="is-preload">
-
 <div id="wrapper">
 
 <!-- ▸ NAVBAR -->
@@ -40,9 +43,8 @@
       <li><a href="#banner">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
 
-      <li class="mobile-more">
-        <button class="nav-toggle" aria-expanded="false">MORE ▾</button>
-      </li>
+      <!-- mobile “More ▾” -->
+      <li class="mobile-more"><button class="nav-toggle" aria-expanded="false">MORE ▾</button></li>
 
       <li class="extra"><a href="#experience">EXPERIENCE</a></li>
       <li class="extra"><a href="#projects">PROJECTS</a></li>
@@ -54,17 +56,18 @@
 
 <!-- ▸ HERO -->
 <div id="banner-wrapper">
-  <div id="bg"></div><div id="overlay"></div>
+  <div id="bg"></div> <div id="overlay"></div>
   <section id="banner" class="major">
     <div class="inner">
       <div id="banner-content">
         <h1 class="animate-title">Garvit Vyas</h1>
-        <p class="animate-subtitle">SoC & ASIC Engineer · M.S. Computer Engineering @ Columbia</p>
+        <p class="animate-subtitle">SoC &amp; ASIC Engineer · M.S. Computer Engineering @ Columbia</p>
+
         <nav class="icons animate-icons">
           <ul>
             <li><a href="mailto:gv2361@columbia.edu" class="icon solid fa-envelope" title="Email"></a></li>
-            <li><a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands fa-linkedin" title="LinkedIn" target="_blank"></a></li>
-            <li><a href="https://github.com/garvitvy18" class="icon brands fa-github" title="GitHub" target="_blank"></a></li>
+            <li><a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands fa-linkedin" target="_blank"></a></li>
+            <li><a href="https://github.com/garvitvy18" class="icon brands fa-github" target="_blank"></a></li>
             <li><a href="garvit_vyas_resume.pdf" class="icon solid fa-file-alt" title="Résumé PDF" target="_blank"></a></li>
           </ul>
         </nav>
@@ -77,7 +80,9 @@
 <section id="about" class="about-section">
   <div class="about-container">
     <h2 class="about-title">ABOUT ME</h2><hr class="about-divider" />
+
     <div class="about-grid">
+      <!-- text -->
       <div class="about-text">
         <h3 class="about-subtitle">EDUCATION</h3>
         <ul class="education-list">
@@ -88,55 +93,57 @@
             </div></li>
           <li class="education-item"><span class="education-bar"></span>
             <div class="education-details">
-              <h4 class="education-degree">B.E. Electronics & Comm. Engg.</h4>
+              <h4 class="education-degree">B.E. Electronics &amp; Communication</h4>
               <p class="education-institution">Jun 2024 · BITS Pilani</p>
             </div></li>
         </ul>
         <p class="about-description">
-          Hardware-driven engineer focused on SoC verification, NoC architectures and formal
-          flows. After optimising ring-topology NoCs at Columbia, I advanced USB and register-block
-          verification at NVIDIA and Arm, translating complex RTL into reliable silicon through automation
-          and metrics-driven workflows.
+          Hardware-centric engineer focused on SoC verification, on-chip networks and formal
+          flows. After optimising ring NoCs on FPGA at Columbia, I advanced USB and
+          register-block verification at NVIDIA and Arm, translating complex RTL into
+          reliable silicon through automation and metrics-driven workflows.
         </p>
       </div>
+
+      <!-- image -->
       <div class="about-image">
-        <img src="assets/images/garvit.jpg" alt="Profile photo">
+        <img src="assets/images/garvit.jpg" alt="Garvit Vyas head-shot" />
       </div>
     </div>
   </div>
 </section>
 
-<!-- ▸ EXPERIENCE  (logos grid) -->
+<!-- ▸ EXPERIENCE -->
 <section id="experience" class="experience-section">
   <div class="experience-container">
     <h2 class="about-title">EXPERIENCE</h2><hr class="about-divider" />
 
     <div class="exp-grid">
 
-      <!-- Arm card -->
+      <!-- Arm -->
       <a class="exp-link" href="exp-arm.html">
         <div class="exp-card">
           <img src="assets/logos/arm.svg" alt="Arm logo">
-          <h3>SoC Engineer Intern</h3>
-          <span>May 2025 – Present</span>
+          <p class="exp-role">SoC Engineer Intern</p>
+          <span class="exp-date">May 2025 – Present</span>
         </div>
       </a>
 
-      <!-- NVIDIA card -->
+      <!-- NVIDIA -->
       <a class="exp-link" href="exp-nvidia.html">
         <div class="exp-card">
           <img src="assets/logos/nvidia.svg" alt="NVIDIA logo">
-          <h3>ASIC Verification Intern</h3>
-          <span>Jul 2023 – Dec 2023</span>
+          <p class="exp-role">ASIC Verification Intern</p>
+          <span class="exp-date">Jul 2023 – Dec 2023</span>
         </div>
       </a>
 
-      <!-- Samsung card -->
+      <!-- Samsung -->
       <a class="exp-link" href="exp-samsung.html">
         <div class="exp-card">
           <img src="assets/logos/samsung.svg" alt="Samsung logo">
-          <h3>Analog Design Intern</h3>
-          <span>Jun 2022 – Jul 2022</span>
+          <p class="exp-role">Analog Design Intern</p>
+          <span class="exp-date">Jun 2022 – Jul 2022</span>
         </div>
       </a>
 
@@ -155,47 +162,32 @@
       <span class="image"><img src="assets/images/ringnoc-thumb.png" alt="Ring NoC"></span>
       <div class="content">
         <h3>Ring NoC on ESP</h3>
-        <p class="desc">Replaced mesh with 3-port ring router; Hamiltonian mapping cut area 12 % and latency 3 %.</p>
+        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area 12 % and latency 3 %.</p>
         <div class="tags"><span>SystemVerilog</span><span>FPGA</span></div>
       </div>
       <a href="project-1.html" class="link primary"></a>
     </article>
-    <!-- add more project cards… -->
+    <!-- add more project tiles as needed -->
   </div>
 </section>
 
-<!-- ▸ SKILLS (unchanged) -->
-<link rel="stylesheet"
-      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
-
+<!-- ▸ SKILLS (plain text) -->
 <section id="skills" class="special">
-  <div class="inner"><header class="major"><h2>Skills</h2></header></div>
-  <ul class="skills-grid">
-    <li class="skill-card"><h3>Languages / RTL</h3><div class="icon-set">
-      <span class="icon"><i class="devicon-python-plain colored" title="Python"></i></span>
-      <span class="icon"><i class="devicon-c-plain colored" title="C"></i></span>
-      <span class="icon"><i class="devicon-vhdl-plain colored" title="VHDL"></i></span>
-      <span class="icon" title="SystemVerilog">SV</span><span class="icon" title="Verilog">V</span>
-      <span class="icon" title="Perl">PL</span><span class="icon" title="Tcl">Tcl</span>
-    </div></li>
-    <li class="skill-card"><h3>Verification / EDA</h3><div class="icon-set">
-      <span class="icon" title="UVM">UVM</span><span class="icon" title="Synopsys VCS/Verdi">VCS</span>
-      <span class="icon" title="Cadence JasperGold">JG</span>
-      <span class="icon"><i class="devicon-vivado-plain colored" title="Vivado"></i></span>
-      <span class="icon" title="Cadence Virtuoso">Virtuoso</span>
-    </div></li>
-    <li class="skill-card"><h3>Workflow</h3><div class="icon-set">
-      <span class="icon"><i class="devicon-git-plain colored" title="Git"></i></span>
-      <span class="icon"><i class="devicon-linux-plain colored" title="Linux"></i></span>
-      <span class="icon" title="Make">Make</span><span class="icon" title="Confluence">C</span>
-    </div></li>
-  </ul>
+  <div class="inner">
+    <header class="major"><h2>Skills</h2></header>
+    <ul class="plain-skills">
+      <li><strong>Languages &amp; RTL:</strong> SystemVerilog, Verilog, VHDL, C, Python, Perl, Tcl</li>
+      <li><strong>Verification &amp; EDA:</strong> UVM, Synopsys VCS/Verdi, Cadence JasperGold, Vivado, Cadence Virtuoso</li>
+      <li><strong>Workflow:</strong> Git, Linux, Make, Confluence</li>
+    </ul>
+  </div>
 </section>
 
 <!-- ▸ FOOTER / CONTACT -->
 <footer id="footer" class="footer-revamp">
   <div class="footer-inner">
     <a id="contact" tabindex="-1" aria-hidden="true"></a>
+
     <div class="contact-header"><h2 class="about-title">CONTACT</h2><hr class="about-divider" /></div>
     <div class="contact-details">
       <p class="email"><a href="mailto:gv2361@columbia.edu">gv2361@columbia.edu</a></p>
@@ -207,12 +199,12 @@
     </div>
     <ul class="copyright">
       <li>&copy; Garvit Vyas 2025</li>
-      <li>Design base <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
+      <li>Design base: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
     </ul>
   </div>
 </footer>
 
-<!-- scripts (template) -->
+<!-- ▸ template scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -221,7 +213,7 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- mobile-menu toggle -->
+<!-- mobile menu toggle -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   const togg=document.querySelector('.nav-toggle'),nav=document.querySelector('.nav-links');
