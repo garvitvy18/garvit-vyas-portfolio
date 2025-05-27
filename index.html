@@ -1,103 +1,96 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8"/>
   <title>Garvit Vyas | SoC &amp; ASIC Engineer</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- template styles -->
-  <link rel="stylesheet" href="assets/css/main.css" />
-  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  <!-- theme / template -->
+  <link rel="stylesheet" href="assets/css/main.css"/>
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
 
-  <!-- ────────────────────────────────────────────────────
+  <!-- ──────────────────────────
        INLINE OVERRIDES
-  ──────────────────────────────────────────────────── -->
+  ────────────────────────── -->
   <style>
-    /* ▸▸ legacy grid cards (unused) ▸▸ */
-    .exp-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
-    .exp-card{
-      width:220px;padding:1.4rem;border-radius:8px;text-align:center;
-      background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.08);
+    /* helper → universal white card */
+    .white-card{
+      background:#ffffff;color:#242943;border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
       transition:transform .2s,box-shadow .2s;
     }
-    .exp-card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.12)}
-    .exp-card img{height:48px;width:auto;margin-bottom:.75rem}
-
-    /* ▸▸ Skill pill boxes ▸▸ */
-    #skills .skill-category{margin-bottom:1.5rem;text-align:center}
-    .skill-pills{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
-    .skill-pill{
-      padding:.35rem .75rem;border-radius:999px;font-size:.9rem;
-      background:#e8ecff;color:#1a1d3a;white-space:nowrap;
+    .white-card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 6px 16px rgba(0,0,0,.15);
     }
 
-    /* ▸▸ Timeline cards ▸▸ */
-    #experience .timeline-item{
-      background:#ffffff !important;color:#242943;border-radius:10px;
-    }
+    /* timeline overrides */
+    #experience .timeline-item{background:#ffffff!important}
     #experience .timeline-item:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
     #experience .exp-logo{width:96px;height:auto;margin:0 auto .9rem}
-    #experience .read-more{display:flex;align-items:center;justify-content:center;height:100%;background:#fff}
+    #experience .read-more{display:flex;align-items:center;justify-content:center;height:100%}
     #experience .read-more span{
       font-weight:600;font-size:1rem;padding:.6rem 1.4rem;
       border:2px solid #242943;border-radius:4px;transition:.2s;
     }
-    #experience .timeline-item:hover .read-more span,
-    #experience .timeline-item:focus-visible .read-more span{background:#242943;color:#fff}
+    #experience .timeline-item:hover .read-more span{background:#242943;color:#ffffff}
     #experience .timeline-item .link.primary{position:absolute;inset:0;border:0;z-index:5}
 
-    /* ▸▸ PROJECT TILES → white cards ▸▸ */
-    .tiles article{background:#ffffff !important;color:#242943 !important}
-    .tiles article:hover{background:#ffffff !important}
-    .tiles article p.desc{color:#444}
-    .tiles article .tags span{background:#e8ecff;color:#1a1d3a}
+    /* skill / tag pills */
+    .skill-pills span,
+    .project-card .tags span{
+      background:#e8ecff;color:#1a1d3a;border-radius:999px;
+      padding:.35rem .75rem;font-size:.9rem;white-space:nowrap;
+    }
 
-    /* ▸▸ RÉSUMÉ SECTION ▸▸ */
-    #resume{padding:4rem 2rem}
-    #resume .resume-container{max-width:900px;margin:0 auto;text-align:center}
+    /* NEW project grid */
+    #projects .project-grid{
+      display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:2rem;
+    }
+    .project-card{
+      width:260px;text-decoration:none;
+    }
+    .project-card img{width:100%;border-radius:10px 10px 0 0}
+    .project-card h3{margin:1.05rem 1rem .35rem;font-size:1.1rem}
+    .project-card p.desc{margin:0 1rem 1rem;color:#444;font-size:.9rem}
+
+    /* résumé card */
     .resume-card{
       display:flex;flex-direction:column;align-items:center;gap:1.5rem;
-      padding:2.5rem 2rem;background:#fff;border-radius:10px;
-      box-shadow:0 4px 12px rgba(0,0,0,.1);transition:.3s;color:#242943;
+      padding:2.5rem 2rem;
     }
-    .resume-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
-
-    /* thumbnail uses the same Font-Awesome icon as the navbar */
     .resume-thumb{font-size:5rem;line-height:1;color:#242943}
 
-    /* ACTION BUTTONS */
-    .resume-actions{
-      display:flex;gap:1rem;flex-wrap:wrap;
-      justify-content:center;align-items:center;
-    }
+    /* resume buttons */
+    .resume-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;align-items:center}
     .resume-btn{
-      display:flex;align-items:center;justify-content:center;
-      min-width:140px;
-      padding:.65rem 1.5rem;font-size:.85rem;font-weight:600;
-      text-transform:uppercase;letter-spacing:.05em;
-      border-radius:4px;border:0;cursor:pointer;text-decoration:none;
+      display:flex;align-items:center;justify-content:center;min-width:140px;
+      padding:.65rem 1.5rem;font-size:.85rem;font-weight:600;text-transform:uppercase;
+      letter-spacing:.05em;border-radius:4px;border:0;cursor:pointer;text-decoration:none;
       transition:background .2s;
     }
-    .view-btn{background:#242943;color:#fff}
+    .view-btn{background:#242943;color:#ffffff}
     .view-btn:hover{background:#1b3564}
     .download-btn{background:#e8ecff;color:#1a1d3a}
     .download-btn:hover{background:#cfd8ff}
 
-    /* ▸▸ full-screen modal ▸▸ */
+    /* modal viewer */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;
       background:rgba(0,0,0,.85);z-index:10000;padding:2rem}
     .modal.open{display:flex}
-    .modal iframe{width:100%;height:100%;border:0;border-radius:6px;max-width:1000px}
+    .modal iframe{width:100%;height:100%;max-width:1000px;border:0;border-radius:6px}
     .modal-close{
-      position:absolute;top:1rem;right:1rem;background:#fff;border:0;font-size:1.25rem;
+      position:absolute;top:1rem;right:1rem;background:#ffffff;border:0;font-size:1.25rem;
       line-height:1;padding:.25rem .6rem;border-radius:4px;cursor:pointer;font-weight:700;color:#000;
     }
-    .modal-close:hover{background:#e8ecff;color:#000}
+    .modal-close:hover{background:#e8ecff}
 
-    /* ▸▸ Columbia-blue backdrop ▸▸ */
+    /* Columbia-blue panels (template default) */
     :root{--columbia:#1D4F91}
     body,#wrapper,#main,#navbar,#header,#footer,#menu,#banner:after,
-    .spotlights>section,#contact>.inner>:nth-child(2n-1){background:var(--columbia)!important}
+    .spotlights>section,#contact>.inner>:nth-child(2n-1){
+      background:var(--columbia)!important;
+    }
   </style>
 </head>
 
@@ -146,21 +139,24 @@
 <!-- ▸ ABOUT -->
 <section id="about" class="about-section">
   <div class="about-container">
-    <h2 class="about-title">ABOUT ME</h2><hr class="about-divider" />
+    <h2 class="about-title">ABOUT ME</h2><hr class="about-divider"/>
     <div class="about-grid">
+      <!-- text -->
       <div class="about-text">
         <h3 class="about-subtitle">EDUCATION</h3>
         <ul class="education-list">
           <li class="education-item"><span class="education-bar"></span>
             <div class="education-details">
               <h4 class="education-degree">M.S. Computer Engineering</h4>
-              <p class="education-institution">Dec&nbsp;2025 · Columbia University</p>
-            </div></li>
+              <p class="education-institution">Dec 2025 · Columbia University</p>
+            </div>
+          </li>
           <li class="education-item"><span class="education-bar"></span>
             <div class="education-details">
               <h4 class="education-degree">B.E. Electronics &amp; Communication</h4>
-              <p class="education-institution">Jun&nbsp;2024 · Birla Institute of Technology &amp; Science, Pilani</p>
-            </div></li>
+              <p class="education-institution">Jun 2024 · BITS Pilani</p>
+            </div>
+          </li>
         </ul>
         <p class="about-description">
           Hardware-centric engineer focused on SoC verification, on-chip networks and
@@ -169,6 +165,7 @@
           into reliable silicon through automation and metrics-driven workflows.
         </p>
       </div>
+      <!-- image -->
       <div class="about-image"><img src="assets/images/garvit.jpg" alt="Garvit Vyas head-shot"></div>
     </div>
   </div>
@@ -177,44 +174,46 @@
 <!-- ▸ EXPERIENCE -->
 <section id="experience" class="experience-section">
   <div class="experience-container">
-    <h2 class="about-title">EXPERIENCE</h2><hr class="about-divider" />
+    <h2 class="about-title">EXPERIENCE</h2><hr class="about-divider"/>
     <div class="timeline">
       <!-- Arm -->
-      <div class="timeline-item">
+      <div class="timeline-item white-card">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
             <img class="exp-logo" src="assets/images/arm.png" alt="Arm logo">
             <p class="timeline-title">SoC Engineer Intern</p>
             <p class="timeline-company">Arm • Chandler, AZ</p>
-            <span class="timeline-date">May&nbsp;2025 – Present</span>
+            <span class="timeline-date">May 2025 – Present</span>
           </div>
-          <div class="card-face card-back read-more"><span>Read&nbsp;more&nbsp;→</span></div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-arm.html"></a>
       </div>
+
       <!-- NVIDIA -->
-      <div class="timeline-item">
+      <div class="timeline-item white-card">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
             <img class="exp-logo" src="assets/images/nvidia.png" alt="NVIDIA logo">
             <p class="timeline-title">ASIC Intern</p>
             <p class="timeline-company">NVIDIA • Bangalore, IN</p>
-            <span class="timeline-date">Jul&nbsp;2023 – Dec&nbsp;2023</span>
+            <span class="timeline-date">Jul 2023 – Dec 2023</span>
           </div>
-          <div class="card-face card-back read-more"><span>Read&nbsp;more&nbsp;→</span></div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-nvidia.html"></a>
       </div>
+
       <!-- Samsung -->
-      <div class="timeline-item">
+      <div class="timeline-item white-card">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
             <img class="exp-logo" src="assets/images/samsung.png" alt="Samsung logo">
             <p class="timeline-title">Summer Intern</p>
-            <p class="timeline-company">Samsung Semiconductor India Research • Bangalore, IN</p>
-            <span class="timeline-date">Jun&nbsp;2022 – Jul&nbsp;2022</span>
+            <p class="timeline-company">Samsung SIR • Bangalore, IN</p>
+            <span class="timeline-date">Jun 2022 – Jul 2022</span>
           </div>
-          <div class="card-face card-back read-more"><span>Read&nbsp;more&nbsp;→</span></div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-samsung.html"></a>
       </div>
@@ -223,20 +222,19 @@
 </section>
 
 <!-- ▸ PROJECTS -->
-<section id="projects" class="special">
+<section id="projects">
   <div class="experience-container">
-    <h2 class="about-title">PROJECTS</h2><hr class="about-divider" />
-  </div>
-  <div class="tiles">
-    <article>
-      <span class="image"><img src="assets/images/ringnoc-thumb.png" alt="Ring NoC"></span>
-      <div class="content">
+    <h2 class="about-title">PROJECTS</h2><hr class="about-divider"/>
+    <div class="project-grid">
+      <!-- project 1 -->
+      <a href="project-1.html" class="project-card white-card">
+        <img src="assets/images/ringnoc-thumb.png" alt="Ring NoC thumbnail">
         <h3>Ring NoC on ESP</h3>
-        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area&nbsp;12 % and latency&nbsp;3 %.</p>
+        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area 12 % and latency 3 %.</p>
         <div class="tags"><span>SystemVerilog</span><span>FPGA</span></div>
-      </div>
-      <a href="project-1.html" class="link primary"></a>
-    </article>
+      </a>
+      <!-- add more .project-card blocks as you create more detail pages -->
+    </div>
   </div>
 </section>
 
@@ -244,28 +242,30 @@
 <section id="skills" class="special">
   <div class="inner">
     <header class="major"><h2>Skills</h2></header>
+
+    <!-- Languages -->
     <div class="skill-category">
       <h3>Languages &amp; RTL</h3>
       <div class="skill-pills">
-        <span class="skill-pill">SystemVerilog</span><span class="skill-pill">Verilog</span>
-        <span class="skill-pill">VHDL</span><span class="skill-pill">C</span>
-        <span class="skill-pill">Python</span><span class="skill-pill">Perl</span>
-        <span class="skill-pill">Tcl</span>
+        <span>SystemVerilog</span><span>Verilog</span><span>VHDL</span>
+        <span>C</span><span>Python</span><span>Perl</span><span>Tcl</span>
       </div>
     </div>
+
+    <!-- Verification -->
     <div class="skill-category">
       <h3>Verification &amp; EDA</h3>
       <div class="skill-pills">
-        <span class="skill-pill">UVM</span><span class="skill-pill">Synopsys VCS/Verdi</span>
-        <span class="skill-pill">Cadence JasperGold</span><span class="skill-pill">Vivado</span>
-        <span class="skill-pill">Cadence Virtuoso</span>
+        <span>UVM</span><span>Synopsys VCS / Verdi</span><span>Cadence JasperGold</span>
+        <span>Vivado</span><span>Cadence Virtuoso</span>
       </div>
     </div>
+
+    <!-- Workflow -->
     <div class="skill-category">
       <h3>Workflow &amp; Tools</h3>
       <div class="skill-pills">
-        <span class="skill-pill">Git</span><span class="skill-pill">Linux</span>
-        <span class="skill-pill">Make</span><span class="skill-pill">Confluence</span>
+        <span>Git</span><span>Linux</span><span>Make</span><span>Confluence</span>
       </div>
     </div>
   </div>
@@ -274,11 +274,10 @@
 <!-- ▸ RESUME -->
 <section id="resume">
   <div class="resume-container">
-    <h2 class="about-title">RÉSUMÉ</h2><hr class="about-divider" />
-    <div class="resume-card">
-      <!-- same icon as navbar, used as thumbnail -->
+    <h2 class="about-title">RÉSUMÉ</h2><hr class="about-divider"/>
+    <div class="resume-card white-card">
       <span class="icon solid fa-file-alt resume-thumb" aria-hidden="true"></span>
-      <p>Here's my updated Resume as of May 2025</p>
+      <p>Here's my updated résumé as of May 2025.</p>
       <div class="resume-actions">
         <button class="resume-btn view-btn" id="openModal">View PDF</button>
         <a href="Garvit Vyas_resume_temp.pdf" class="resume-btn download-btn" download>Download PDF</a>
@@ -291,10 +290,10 @@
 <footer id="footer" class="footer-revamp">
   <div class="footer-inner">
     <a id="contact" tabindex="-1" aria-hidden="true"></a>
-    <div class="contact-header"><h2 class="about-title">CONTACT</h2><hr class="about-divider" /></div>
+    <div class="contact-header"><h2 class="about-title">CONTACT</h2><hr class="about-divider"/></div>
     <div class="contact-details">
       <p class="email"><a href="mailto:gv2361@columbia.edu">gv2361@columbia.edu</a></p>
-      <p class="phone"><a href="tel:+16462104081">+1&nbsp;(646)&nbsp;210-4081</a></p>
+      <p class="phone"><a href="tel:+16462104081">+1 (646) 210-4081</a></p>
     </div>
     <div class="social">
       <a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands alt fa-linkedin" aria-label="LinkedIn"></a>
@@ -304,13 +303,13 @@
   </div>
 </footer>
 
-<!-- ▸ MODAL PDF VIEWER -->
+<!-- ▸ MODAL VIEWER -->
 <div class="modal" id="resumeModal" aria-hidden="true">
-  <button class="modal-close" aria-label="Close résumé" id="closeModal">&times;</button>
-  <iframe src="Garvit Vyas_resume_temp.pdf#toolbar=0&amp;view=fitH" title="Résumé PDF"></iframe>
+  <button class="modal-close" id="closeModal" aria-label="Close résumé">&times;</button>
+  <iframe src="Garvit Vyas_resume_temp.pdf#toolbar=0&view=fitH" title="Résumé PDF"></iframe>
 </div>
 
-<!-- ▸ template scripts -->
+<!-- ▸ SCRIPTS -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -319,34 +318,41 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- extras: mobile nav + résumé modal -->
+<!-- nav toggle + modal -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
+
   /* mobile nav toggle */
   const togg=document.querySelector('.nav-toggle'),
         nav=document.querySelector('.nav-links');
-  togg.addEventListener('click',()=>{
-    const open=nav.classList.toggle('open');
-    togg.setAttribute('aria-expanded',open);
-  });
-  nav.addEventListener('click',e=>{
-    if(e.target.tagName==='A'&&nav.classList.contains('open')){
-      nav.classList.remove('open');
-      togg.setAttribute('aria-expanded','false');
-    }
-  });
+  if(togg){
+    togg.addEventListener('click',()=>{
+      const open=nav.classList.toggle('open');
+      togg.setAttribute('aria-expanded',open);
+    });
+    nav.addEventListener('click',e=>{
+      if(e.target.tagName==='A' && nav.classList.contains('open')){
+        nav.classList.remove('open');
+        togg.setAttribute('aria-expanded','false');
+      }
+    });
+  }
 
   /* résumé modal */
   const modal=document.getElementById('resumeModal'),
         openBtn=document.getElementById('openModal'),
         closeBtn=document.getElementById('closeModal');
-  const close=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true')};
-  openBtn.addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false')});
-  closeBtn.addEventListener('click',close);
-  modal.addEventListener('click',e=>{if(e.target===modal) close()});
-  document.addEventListener('keydown',e=>{if(e.key==='Escape') close()});
+  if(openBtn){
+    const close=()=>{modal.classList.remove('open');modal.setAttribute('aria-hidden','true');};
+    openBtn.addEventListener('click',()=>{modal.classList.add('open');modal.setAttribute('aria-hidden','false');});
+    closeBtn.addEventListener('click',close);
+    modal.addEventListener('click',e=>{if(e.target===modal) close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape') close();});
+  }
+
 });
 </script>
 
+</div><!-- /#wrapper -->
 </body>
 </html>
