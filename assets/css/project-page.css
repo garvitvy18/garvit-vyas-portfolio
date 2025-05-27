@@ -1,28 +1,26 @@
 /* ────────────────────────────────
-   SIMPLE PROJECT-PAGE STYLES
-   (scoped under body.project-page)
+   PROJECT-PAGE OVERRIDES
+   (all rules live under body.project-page)
 ──────────────────────────────── */
 
-/* 1️⃣  Columbia-blue backdrop like the home page */
-:root{ --columbia:#1D4F91; }
+:root{ --columbia:#1D4F91; }      /* same blue as your main site */
 
+/* page backdrop + default text */
 body.project-page{
-  background:var(--columbia);
-  color:#242943;            /* dark text like other white cards */
+  background:var(--columbia);     /* ⬅️ matches index.html */
+  color:#ffffff;                  /* keep white text for contrast */
+  font-family:inherit;
 }
 
-/* ------------- white content card ------------ */
+/* main content column (no card, just centered text) */
 body.project-page .content{
   max-width:900px;
   margin:4rem auto;
-  background:#fff;
   padding:3rem 1.25rem 4rem;
   line-height:1.6;
-  border-radius:12px;
-  box-shadow:0 4px 16px rgba(0,0,0,.15);
 }
 
-/* ------------- headings ------------ */
+/* headings */
 body.project-page .project-title{
   margin:0;
   font-size:2.75rem;
@@ -30,15 +28,13 @@ body.project-page .project-title{
   text-transform:uppercase;
   letter-spacing:.03em;
 }
-
 body.project-page .divider{
   margin:.75rem 0 2.5rem;
   border:none;
   height:2px;
-  background:#242943;
-  opacity:.15;
+  background:#ffffff;
+  opacity:.25;
 }
-
 body.project-page h2{
   font-size:1.25rem;
   font-weight:700;
@@ -47,7 +43,22 @@ body.project-page h2{
   letter-spacing:.03em;
 }
 
-/* ------------- links row ------------ */
+/* “Back” pill */
+.back-btn{
+  display:inline-block;
+  margin:1.5rem 0 0 2rem;
+  background:#e8ecff;
+  color:#1a1d3a;
+  font-size:.9rem;
+  font-weight:600;
+  padding:.4rem 1.05rem;
+  border-radius:999px;
+  text-decoration:none;
+  transition:background .2s;
+}
+.back-btn:hover{ background:#cfd8ff; }
+
+/* link row */
 body.project-page .link-row{
   list-style:none;
   padding:0;
@@ -56,43 +67,27 @@ body.project-page .link-row{
   flex-wrap:wrap;
   gap:1rem;
 }
-
 body.project-page .link-row a{
   display:block;
   padding:.6rem 1.25rem;
-  border:1px solid #242943;
+  border:1px solid #ffffff;
   border-radius:4px;
   font-weight:600;
   text-decoration:none;
-  color:#242943;
-  transition:background .15s;
+  color:#ffffff;
+  transition:background .15s,color .15s;
 }
-
 body.project-page .link-row a:hover{
-  background:#e8ecff;
+  background:#ffffff;
+  color:#000000;
 }
 
-/* ------------- bullet list ---------- */
+/* bullet list */
 body.project-page .bullet-list{
   padding-left:1rem;
 }
 
-/* ------------- Back pill ------------ */
-.back-btn{
-  display:inline-block;
-  margin:2rem 0 0 2rem;
-  background:#e8ecff;
-  color:#1a1d3a;
-  font-size:.9rem;
-  font-weight:600;
-  padding:.4rem 1.1rem;
-  border-radius:999px;
-  text-decoration:none;
-  transition:background .2s;
-}
-.back-btn:hover{ background:#cfd8ff; }
-
-/* ------------- responsive ----------- */
+/* responsive tweaks */
 @media(max-width:580px){
   body.project-page .project-title{font-size:2.1rem;}
   body.project-page .link-row{flex-direction:column;}
