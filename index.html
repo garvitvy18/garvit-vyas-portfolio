@@ -69,6 +69,23 @@
     /* ▸▸ ONE-LINE HERO SUBTITLE ▸▸ */
     .animate-subtitle{white-space:nowrap;}   /* <── NEW */
   </style>
+  <!-- Columbia-blue background swap  ▸  paste this just BEFORE </head> -->
+<style>
+  :root{ --columbia:#1D4F91; }           /* pick your exact Columbia blue */
+
+  /* large dark panels that need recolouring */
+  body,
+  #wrapper,
+  #main,
+  #navbar,
+  #header,
+  #footer,
+  #menu,
+  #banner:after,                         /* hero overlay */
+  .spotlights > section,
+  #contact > .inner > :nth-child(2n-1)   /* contact's left column strip */
+  { background:var(--columbia)!important; }
+</style>
 </head>
 
 <script>window.addEventListener('load',()=>{document.body.classList.remove('is-preload');});</script>
@@ -101,7 +118,7 @@
     <div class="inner">
       <div id="banner-content">
         <h1 class="animate-title">Garvit Vyas</h1>
-        <p class="animate-subtitle">RTL Design · Verification · Computer Architecture · VLSI</p>
+        <p class="animate-subtitle">Design Verification · RTL Design · Formal Verification · Computer Architecture · VLSI</p>
 
         <nav class="icons animate-icons">
           <ul>
