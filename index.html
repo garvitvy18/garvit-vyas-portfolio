@@ -1,12 +1,15 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-  <title>Sanjith Krishna | Data Science Portfolio</title>
+  <title>Garvit Vyas | SoC & ASIC Engineer Portfolio</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <!-- main template styles -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
+
+<!-- removes preload blur once everything is downloaded -->
 <script>
   window.addEventListener('load', () => {
     document.body.classList.remove('is-preload');
@@ -15,23 +18,21 @@
 
 <body class="is-preload">
 
- <!-- Wrapper -->
- <div id="wrapper">
+<!-- ▸▸ WRAPPER ▸▸ -->
+<div id="wrapper">
 
- <!-- MINIMALIST STICKY NAV -->
+<!-- ▸▸ 1  MINIMALIST STICKY NAV  ▸▸ -->
 <header id="navbar">
   <nav class="container">
     <ul class="nav-links">
-      <!-- always visible -->
       <li><a href="#banner">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
 
-      <!-- “More ▾” toggle (only shows ≤ 600 px) -->
+      <!-- mobile toggle -->
       <li class="mobile-more">
         <button class="nav-toggle" aria-expanded="false">MORE ▾</button>
       </li>
 
-      <!-- extra links (hidden on mobile until toggle) -->
       <li class="extra"><a href="#experience">EXPERIENCE</a></li>
       <li class="extra"><a href="#projects">PROJECTS</a></li>
       <li class="extra"><a href="#skills">SKILLS</a></li>
@@ -41,8 +42,7 @@
   </nav>
 </header>
 
-
-<!-- Banner / Hero with animated BG & overlay -->
+<!-- ▸▸ 2  BANNER / HERO ▸▸ -->
 <div id="banner-wrapper">
   <div id="bg"></div>
   <div id="overlay"></div>
@@ -50,107 +50,67 @@
   <section id="banner" class="major">
     <div class="inner">
       <div id="banner-content">
-        <!-- 1a. Title -->
-        <h1 class="animate-title">Sanjith Krishna</h1>
+        <h1 class="animate-title">Garvit Vyas</h1>
+        <p class="animate-subtitle">SoC & ASIC Engineer · M.S. Computer Engineering @ Columbia</p>
 
-        <!-- 1b. Subtitle -->
-        <p class="animate-subtitle">
-          Data Science • Machine Learning • Analytics
-        </p>
-
-        <!-- 1c. Social / Resume icons -->
         <nav class="icons animate-icons">
           <ul>
-            <li>
-              <a href="mailto:sanjithkrishnaus@gmail.com"
-                 class="icon solid fa-envelope"
-                 title="Email"
-                 target="_blank" rel="noopener noreferrer"></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/sanjith-krishna/"
-                 class="icon brands fa-linkedin"
-                 title="LinkedIn"
-                 target="_blank" rel="noopener noreferrer"></a>
-            </li>
-            <li>
-              <a href="https://github.com/sanjith-v"
-                 class="icon brands fa-github"
-                 title="GitHub"
-                 target="_blank" rel="noopener noreferrer"></a>
-            </li>
-            <li>
-              <a href="/portfolio/resume.pdf"
-                 class="icon solid fa-file-alt"
-                 title="Resume"
-                 target="_blank" rel="noopener noreferrer"></a>
-            </li>
+            <li><a href="mailto:gv2361@columbia.edu" class="icon solid fa-envelope" title="Email" target="_blank" rel="noopener"></a></li>
+            <li><a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands fa-linkedin" title="LinkedIn" target="_blank" rel="noopener"></a></li>
+            <li><a href="https://github.com/garvitvy18" class="icon brands fa-github" title="GitHub" target="_blank" rel="noopener"></a></li>
+            <li><a href="resume.pdf" class="icon solid fa-file-alt" title="Résumé PDF" target="_blank" rel="noopener"></a></li>
           </ul>
         </nav>
-      </div>
+      </div><!-- /#banner-content -->
     </div>
   </section>
-</div>
+</div><!-- /#banner-wrapper -->
 
+<!-- ▸▸ 3  ABOUT  ▸▸ -->
+<section id="about" class="about-section">
+  <div class="about-container">
+    <h2 class="about-title">ABOUT ME</h2>
+    <hr class="about-divider" />
 
+    <div class="about-grid">
+      <!-- left column -->
+      <div class="about-text">
+        <h3 class="about-subtitle">EDUCATION</h3>
+        <ul class="education-list">
+          <li class="education-item">
+            <span class="education-bar"></span>
+            <div class="education-details">
+              <h4 class="education-degree">M.S. Computer Engineering</h4>
+              <p class="education-institution">Dec 2025 (expected) · Columbia University, New York</p>
+            </div>
+          </li>
+          <li class="education-item">
+            <span class="education-bar"></span>
+            <div class="education-details">
+              <h4 class="education-degree">B.E. Electronics & Communication Engineering</h4>
+              <p class="education-institution">Jun 2024 · BITS Pilani, Hyderabad</p>
+            </div>
+          </li>
+        </ul>
 
-
-    <!-- Main content -->
-    <div id="main">
-
-     <!-- About -->
-     <section id="about" class="about-section">
-      <div class="about-container">
-        <!-- Section title -->
-        <h2 class="about-title">ABOUT ME</h2>
-        <hr   class="about-divider" />
-    
-        <!-- Two-column grid: left = text, right = image -->
-        <div class="about-grid">
-          
-          <!-- Left column: text content -->
-          <div class="about-text">
-            
-            <!-- Sub-section heading -->
-            <h3 class="about-subtitle">EDUCATION</h3>
-    
-            <!-- List of education entries -->
-            <ul class="education-list">
-              <li class="education-item">
-                <span class="education-bar"></span>
-                <div class="education-details">
-                  <h4 class="education-degree">MS in Business Analytics and Information Management </h4>
-                  <p class="education-institution">
-                    2025, Purdue University 
-                  </p>
-                </div>
-              </li>
-              <li class="education-item">
-                <span class="education-bar"></span>
-                <div class="education-details">
-                  <h4 class="education-degree">BE in Chemical Engineering </h4>
-                  <p class="education-institution">
-                    2024, Birla Institute of Technology and Science, Pilani
-                  </p>
-                </div>
-              </li>
-            </ul>
-    
-            <!-- Descriptive paragraph -->
-            <p class="about-description">
-              I'm a data scientist currently pursuing my Master's in Business Analytics at Purdue University, specializing in Machine Learning, NLP, and Optimization. My professional experiences in fintech and consulting have allowed me to build predictive models and scalable analytics solutions, helping organizations tackle real-world business challenges. I enjoy collaborating in dynamic teams, transforming complex data into actionable insights, and am passionate about using advanced analytics to drive meaningful and impactful decisions.</p>
-          </div>
-    
-          <!-- Right column: profile image -->
-          <div class="about-image">
-            <img src="assets/images/headshot.JPG" alt="Profile picture" />
-          </div>
-    
-        </div>
+        <p class="about-description">
+          Hardware-driven engineer specialising in SoC verification, network-on-chip architectures and
+          formal flows. After optimising ring-topology NoCs on FPGA at Columbia, I advanced USB and
+          register-block verification at NVIDIA and Arm. I thrive on translating complex RTL into
+          reliable silicon through automation, thoughtful metrics and cross-disciplinary teamwork.:contentReference[oaicite:1]{index=1}
+        </p>
       </div>
-    </section>
 
-    <!-- ▸▸ EXPERIENCE – flip-card timeline ▸▸ -->
+      <!-- right column (profile img) -->
+      <div class="about-image">
+        <img src="assets/images/garvit.jpg"
+             alt="Garvit Vyas head-shot" />
+      </div>
+    </div><!-- /.about-grid -->
+  </div><!-- /.about-container -->
+</section>
+
+<!-- ▸▸ 4  EXPERIENCE – flip-card timeline ▸▸ -->
 <section id="experience" class="experience-section">
   <div class="experience-container">
     <h2 class="about-title">EXPERIENCE</h2>
@@ -158,519 +118,257 @@
 
     <div class="timeline">
 
-      <!-- ─────────────────── Kearney ─────────────────── -->
-      <div class="timeline-item">
-        <div class="flip-card">                      <!-- NEW wrapper -->
-
-          <!-- ▸ Front ▸ -->
-          <div class="card-face card-front">
-            <div class="timeline-date">Jan 2025 – Apr 2025</div>
-            <h3 class="timeline-title">Data Science Consultant</h3>
-            <div class="timeline-company">Kearney Student Labs</div>
-            <div class="timeline-location">Remote, USA</div>
-          </div>
-
-          <!-- ▸ Back ▸ -->
-          <div class="card-face card-back">
-            <ul>
-              <li>Built a procurement-analytics framework flagging negotiation-worthy spend with <strong>97.3 % accuracy</strong>.</li>
-              <li>Forecasted procurement spend (Holt-Winters, MAPE 8.46 %).</li>
-              <li>Identified key employee-benefit cost drivers via regression.</li>
-            </ul>
-          </div>
-
-        </div><!-- /.flip-card -->
-      </div><!-- /.timeline-item -->
-
-      <!-- ─────────────────── Finsire ─────────────────── -->
+      <!-- ─────── Arm ─────── -->
       <div class="timeline-item">
         <div class="flip-card">
           <div class="card-face card-front">
-            <div class="timeline-date">Sep 2023 – Aug 2024</div>
-            <h3 class="timeline-title">Data Scientist</h3>
-            <div class="timeline-company">Finsire</div>
-            <div class="timeline-location">Chennai, India</div>
+            <div class="timeline-date">May 2025 – Present</div>
+            <h3 class="timeline-title">SoC Engineer Intern</h3>
+            <div class="timeline-company">Arm</div>
+            <div class="timeline-location">Chandler AZ, USA</div>
           </div>
-
           <div class="card-face card-back">
             <ul>
-              <li>Deployed a vehicle-valuation model &amp; DB (<strong>23 K vehicles</strong>) for collateral-based lending.</li>
-              <li>Optimised Flask REST APIs → refresh time <strong>2 min → 2 s</strong>.</li>
-              <li>Built Word2Vec / BERT bank-statement analyser (65 % accuracy).</li>
+              <li>Architected <strong>automated register-block verification flow</strong> by parsing Jade RM Markdown into IP-XACT / JSON / XML.:contentReference[oaicite:2]{index=2}</li>
+              <li>Generated UVM wrappers &amp; Python scripts to auto-probe complex behaviours, cutting multi-block regressions × 6.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- ─────────────────── Nature Healers ─────────────────── -->
+      <!-- ─────── NVIDIA ─────── -->
       <div class="timeline-item">
         <div class="flip-card">
           <div class="card-face card-front">
-            <div class="timeline-date">May 2022 – Jun 2022</div>
-            <h3 class="timeline-title">App Development Intern</h3>
-            <div class="timeline-company">Nature Healers Climate Solutions</div>
-            <div class="timeline-location">Remote, India</div>
+            <div class="timeline-date">Jul 2023 – Dec 2023</div>
+            <h3 class="timeline-title">ASIC Verification Intern</h3>
+            <div class="timeline-company">NVIDIA Graphics</div>
+            <div class="timeline-location">Bangalore, India</div>
           </div>
-
           <div class="card-face card-back">
             <ul>
-              <li>Created a mobile app that <strong>gamifies climate action</strong> to boost user engagement in sustainability.</li>
+              <li>Migrated USB BFM from unit TB to SoC-level UVM TB, eliminating <strong>16 weeks</strong> of bring-up per chip.:contentReference[oaicite:3]{index=3}</li>
+              <li>Decoupled XHCI dependencies, improved modularity and released first CRR verification package.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <!-- ─────────────────── Blod.in ─────────────────── -->
+      <!-- ─────── Samsung ─────── -->
       <div class="timeline-item">
         <div class="flip-card">
           <div class="card-face card-front">
-            <div class="timeline-date">Sep 2021 – Nov 2021</div>
-            <h3 class="timeline-title">Web Development Intern</h3>
-            <div class="timeline-company">Blod.in</div>
-            <div class="timeline-location">Chennai, India</div>
+            <div class="timeline-date">Jun 2022 – Jul 2022</div>
+            <h3 class="timeline-title">Analog Design Intern</h3>
+            <div class="timeline-company">Samsung Semiconductor R&D</div>
+            <div class="timeline-location">Bangalore, India</div>
           </div>
-
           <div class="card-face card-back">
             <ul>
-              <li>Built a ReactJS + Firebase dashboard for hospitals to filter blood donors by type, distance &amp; eligibility.</li>
-              <li>Improved response speed for urgent transfusions.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <!-- ─────────────────── MacAppStudio ─────────────────── -->
-      <div class="timeline-item">
-        <div class="flip-card">
-          <div class="card-face card-front">
-            <div class="timeline-date">May 2021 – Aug 2021</div>
-            <h3 class="timeline-title">Full-Stack Development Intern</h3>
-            <div class="timeline-company">MacAppStudio</div>
-            <div class="timeline-location">Chennai, India</div>
-          </div>
-
-          <div class="card-face card-back">
-            <ul>
-              <li>Re-created native apps &amp; a website with React Native, Firebase &amp; Firestore for a Middle-East client.</li>
-              <li>Drove the firm’s shift to a <em>single cross-platform</em> stack.</li>
+              <li>Optimised CMOS W/L in Cadence Virtuoso, achieving &lt; 2 % distortion and improved GBW.:contentReference[oaicite:4]{index=4}</li>
             </ul>
           </div>
         </div>
       </div>
 
     </div><!-- /.timeline -->
-  </div><!-- /.experience-container -->
+  </div>
 </section>
 <!-- ▸▸ END EXPERIENCE ▸▸ -->
 
+<!-- ▸▸ 5  PROJECTS  ▸▸ -->
+<section id="projects" class="special">
+  <div class="experience-container">
+    <h2 class="about-title">PROJECTS</h2>
+    <hr class="about-divider" />
+  </div>
 
-    
-    
-    
-      <!-- Projects -->
-      <section id="projects" class="special">
-        <div class="experience-container">
-          <h2 class="about-title">PROJECTS</h2>
-          <hr class="about-divider" />
-        </div>
-        <div class="tiles">
-          <article>
-            <span class="image">
-              <img src="assets/images/instacart-thumb.png"
-                   alt="Instacart Basket Analysis">
-            </span>
-          
-            <!-- new wrapper -->
-            <div class="content">
-              <h3>Instacart Basket Analysis</h3>
-          
-              <!-- placeholder text you can replace later -->
-              <p class="desc">
-                Leveraged SQL to uncover shopping patterns, reorder dynamics, and cross-sell opportunities from 3M+ grocery orders.
-              </p>
-          
-              <!-- tech-stack tags -->
-              <div class="tags">
-                <span>SQL</span>
-                <span>PostgreSQL</span>
-              </div>
-            </div>
-          
-            <!-- keeps the whole card clickable -->
-            <a href="project-1.html" class="link primary"></a>
-          </article>
-          
+  <div class="tiles">
 
-          <article>
-            <span class="image">
-              <img src="assets/images/caption-thumb.png" alt="GenAI Caption Generator">
-            </span>
-            <div class="content">
-              <h3>GenAI Caption Generator</h3>
-              <p class="desc">
-                Built an end-to-end GenAI pipeline generating creative, context-aware captions using BLIP embeddings and GPT-4 API.</p>
-              <div class="tags">
-                <span>GenAI</span>
-                <span>HuggingFace</span>
-                <span>FastAPI</span>
-              </div>
-            </div>
-            <a href="project-2.html" class="link primary"></a>
-          </article>
-          
-          <article>
-            <span class="image">
-              <img src="assets/images/spotify-thumb.png" alt="Spotify Song Recommender">
-            </span>
-            <div class="content">
-              <h3>Spotify Song Recommender</h3>
-              <p class="desc">
-                Used clustering and PCA to identify and visualize distinct Spotify song archetypes from audio metadata. </p>
-              <div class="tags">
-                <span>Data Science</span>
-                <span>PCA</span>
-                <span>Clustering</span>
-              </div>
-            </div>
-            <a href="project-3.html" class="link primary"></a>
-          </article>
-          
-          <article>
-            <span class="image">
-              <img src="assets/images/procurement-thumb.png" alt="Procurement Savings Optimization">
-            </span>
-            <div class="content">
-              <h3>Procurement Savings Optimization</h3>
-              <p class="desc">
-                Implemented predictive models and standardized tracking frameworks to optimize procurement savings for a global insurance firm.</p>
-              <div class="tags">
-                <span>Time Series</span>
-                <span>XGBoost</span>
-                <span>Tableau</span>
-              </div>
-            </div>
-            <a href="project-4.html" class="link primary"></a>
-          </article>
-          
-          <article>
-            <span class="image">
-              <img src="assets/images/ti3c2-thumb.png" alt="Ti₃C₂ Capacitance Study">
-            </span>
-            <div class="content">
-              <h3>Ti₃C₂ Capacitance Study</h3>
-              <p class="desc">
-                Developed ML models predicting Ti₃C₂-based supercapacitor performance, providing actionable insights for materials design.</p>
-              <div class="tags">
-                <span>Research</span>
-                <span>Neural Networks</span>
-                <span>Regression</span>
-              </div>
-            </div>
-            <a href="project-5.html" class="link primary"></a>
-          </article>
-          
-          <article>
-            <span class="image">
-              <img src="assets/images/disaster-thumb.png" alt="Disaster Tweet Classification">
-            </span>
-            <div class="content">
-              <h3>Disaster Tweet Classification</h3>
-              <p class="desc">
-                Created a high-performing NLP model ensemble classifying disaster-related tweets using CNNs and BERT transformers.</p>
-              <div class="tags">
-                <span>NLP</span>
-                <span>BERT</span>
-                <span>CNN</span>
-              </div>
-            </div>
-            <a href="project-6.html" class="link primary"></a>
-          </article>
-          
-          <article>
-            <span class="image">
-              <img src="assets/images/airbnb-thumb.png" alt="AI for Airbnb Superhosts">
-            </span>
-            <div class="content">
-              <h3>AI for Airbnb Superhosts</h3>
-              <p class="desc">
-                Built a predictive AI model identifying key success drivers for Airbnb hosts, proposing targeted growth strategies. </p>
-              <div class="tags">
-                <span>Gradient Boosting</span>
-                <span>SMOTE</span>
-                <span>Geospatial Analysis</span>
-              </div>
-            </div>
-            <a href="project-7.html" class="link primary"></a>
-          </article>
-          
-          <article>
-            <span class="image">
-              <img src="assets/images/bankruptcy-thumb.png" alt="Bankruptcy Prediction">
-            </span>
-            <div class="content">
-              <h3>Bankruptcy Prediction</h3>
-              <p class="desc">
-                Utilized SAS Enterprise Miner to create an ensemble model predicting corporate bankruptcy with high accuracy.<div class="tags">
-                <span>SAS EM</span>
-                <span>Data Mining</span>
-                <span>Ensemble Methods</span>
-              </div>
-            </div>
-            <a href="project-8.html" class="link primary"></a>
-          </article>
-          
-        </div>
-      </section>
+    <!-- 1 · Ring NoC Integration -->
+    <article>
+      <span class="image"><img src="assets/images/ringnoc-thumb.png" alt="Ring NoC"></span>
+      <div class="content">
+        <h3>Ring NoC on ESP</h3>
+        <p class="desc">Replaced 2-D mesh with 3-port ring router; Hamiltonian mapping cut area 12 % & latency 3 %.:contentReference[oaicite:5]{index=5}</p>
+        <div class="tags"><span>SystemVerilog</span><span>FPGA</span></div>
+      </div>
+      <a href="project-1.html" class="link primary"></a>
+    </article>
 
-<!-- ──────────  SKILLS  ────────── -->
+    <!-- 2 · Vortex GPGPU study -->
+    <article>
+      <span class="image"><img src="assets/images/vortex-thumb.png" alt="Vortex GPGPU"></span>
+      <div class="content">
+        <h3>Vortex GPGPU Performance</h3>
+        <p class="desc">Custom RTL counters + Python automation quantified warp efficiency & pipeline stalls.:contentReference[oaicite:6]{index=6}</p>
+        <div class="tags"><span>RISC-V</span><span>Python</span></div>
+      </div>
+      <a href="project-2.html" class="link primary"></a>
+    </article>
+
+    <!-- 3 · AHB-APB formal -->
+    <article>
+      <span class="image"><img src="assets/images/ahb2apb-thumb.png" alt="AHB-APB Formal"></span>
+      <div class="content">
+        <h3>Formal Verification of AHB-→APB Bridge</h3>
+        <p class="desc">Achieved 100 % FSM coverage in JasperGold; fixed WENABLEP transition bug.:contentReference[oaicite:7]{index=7}</p>
+        <div class="tags"><span>Formal</span><span>JasperGold</span></div>
+      </div>
+      <a href="project-3.html" class="link primary"></a>
+    </article>
+
+    <!-- 4 · FIR accelerator -->
+    <article>
+      <span class="image"><img src="assets/images/fir-thumb.png" alt="FIR Accelerator"></span>
+      <div class="content">
+        <h3>64-tap FIR Accelerator</h3>
+        <p class="desc">Verilog RTL timing-closed in Synopsys DC/PrimeTime; matched MATLAB golden model.:contentReference[oaicite:8]{index=8}</p>
+        <div class="tags"><span>Verilog</span><span>PrimeTime</span></div>
+      </div>
+      <a href="project-4.html" class="link primary"></a>
+    </article>
+
+    <!-- 5 · NoC verification -->
+    <article>
+      <span class="image"><img src="assets/images/noc-thumb.png" alt="NoC Verification"></span>
+      <div class="content">
+        <h3>Mesh NoC Verification (UVM)</h3>
+        <p class="desc">Scaled UVM TB to 14×14 mesh; functional coverage ↑ 73 → 97 %.:contentReference[oaicite:9]{index=9}</p>
+        <div class="tags"><span>UVM</span><span>Coverage</span></div>
+      </div>
+      <a href="project-5.html" class="link primary"></a>
+    </article>
+
+    <!-- placeholders for two more slots -->
+    <article>
+      <span class="image"><img src="assets/images/placeholder.png" alt=""></span>
+      <div class="content"><h3>Project 6</h3><p class="desc">Coming soon.</p></div>
+      <a href="#" class="link primary"></a>
+    </article>
+
+    <article>
+      <span class="image"><img src="assets/images/placeholder.png" alt=""></span>
+      <div class="content"><h3>Project 7</h3><p class="desc">Coming soon.</p></div>
+      <a href="#" class="link primary"></a>
+    </article>
+
+  </div><!-- /.tiles -->
+</section>
+
+<!-- ▸▸ 6  SKILLS ▸▸ -->
 <link rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
 
 <section id="skills" class="special">
-  <div class="inner">
-    <header class="major"><h2>Skills</h2></header>
-  </div>
+  <div class="inner"><header class="major"><h2>Skills</h2></header></div>
 
-  <!-- Direct grid (no outer “panel” box) -->
   <ul class="skills-grid">
 
-    <!-- Languages & Databases -->
     <li class="skill-card">
-      <h3>Languages & Databases</h3>
+      <h3>Languages / RTL</h3>
       <div class="icon-set">
-        <span class="icon" title="Python"><i class="devicon-python-plain colored"></i></span>
-        <span class="icon" title="HTML5"><i class="devicon-html5-plain colored"></i></span>
-        <span class="icon" title="CSS3"><i class="devicon-css3-plain colored"></i></span>
-        <span class="icon" title="Swift"><i class="devicon-swift-plain colored"></i></span>
-        <span class="icon" title="React"><i class="devicon-react-original colored"></i></span>
-        <span class="icon" title="MySQL"><i class="devicon-mysql-plain colored"></i></span>
-        <span class="icon" title="PostgreSQL"><i class="devicon-postgresql-plain colored"></i></span>
-        <span class="icon" title="Firebase"><i class="devicon-firebase-plain colored"></i></span>
+        <span class="icon"><i class="devicon-python-plain colored" title="Python"></i></span>
+        <span class="icon"><i class="devicon-c-plain colored" title="C"></i></span>
+        <span class="icon"><i class="devicon-vhdl-plain colored" title="VHDL"></i></span>
+        <!-- generic chip icons for SystemVerilog/Verilog/Perl/Tcl -->
+        <span class="icon" title="SystemVerilog">SV</span>
+        <span class="icon" title="Verilog">V</span>
+        <span class="icon" title="Perl">PL</span>
+        <span class="icon" title="Tcl">Tcl</span>
       </div>
     </li>
 
-    <!-- Frameworks/Python Libraries -->
     <li class="skill-card">
-      <h3>Frameworks/Python Libraries</h3>
+      <h3>Verification / EDA</h3>
       <div class="icon-set">
-        
-
-        <span class="icon" title="NumPy"><i class="devicon-numpy-plain colored"></i></span>
-        <span class="icon" title="Pandas"><i class="devicon-pandas-plain-wordmark colored"></i></span>
-        <span class="icon" title="Flask"><i class="devicon-flask-original colored"></i></span>
-        <span class="icon" title="FastAPI"><i class="devicon-fastapi-plain colored"></i></span>
-        <span class="icon" title="Django"><i class="devicon-django-plain colored"></i></span>
-
-        
-        <span class="icon" title="Keras"><i class="devicon-keras-plain colored"></i></span>
-        <span class="icon" title="TensorFlow"><i class="devicon-tensorflow-original colored"></i></span>
-        <span class="icon" title="PyTorch"><i class="devicon-pytorch-original colored"></i></span>
-        <span class="icon" title="Scikit-learn"><i class="devicon-scikitlearn-plain colored"></i></span>
-        <span class="icon" title="OpenCV"><i class="devicon-opencv-plain colored"></i></span>
-
-        
-        <span class="icon" title="Selenium"><i class="devicon-selenium-original colored"></i></span>
-
-       
-        <span class="icon" title="Bootstrap"><i class="devicon-bootstrap-plain colored"></i></span>
+        <span class="icon" title="UVM">UVM</span>
+        <span class="icon"><i class="devicon-vivado-plain colored" title="Vivado"></i></span>
+        <span class="icon" title="Synopsys VCS/Verdi">VCS</span>
+        <span class="icon" title="Cadence JasperGold">JG</span>
+        <span class="icon" title="Cadence Virtuoso">Virtuoso</span>
       </div>
     </li>
 
-    <!-- Tools & Cloud -->
     <li class="skill-card">
-      <h3>Tools & Cloud</h3>
+      <h3>Workflow</h3>
       <div class="icon-set">
-        <span class="icon" title="AWS"><i class="devicon-amazonwebservices-plain-wordmark colored"></i></span>
-        <span class="icon" title="Azure"><i class="devicon-azure-plain colored"></i></span>
-        <span class="icon" title="Tableau"><img src="assets/images/tableau.svg" alt="Tableau"></span>
-        <span class="icon" title="MATLAB"><i class="devicon-matlab-plain colored"></i></span>
-        <span class="icon" title="Jupyter"><i class="devicon-jupyter-plain colored"></i></span>
-        <span class="icon" title="Git"><i class="devicon-git-plain colored"></i></span>
-        <span class="icon" title="Heroku"><i class="devicon-heroku-plain colored"></i></span>
-        <span class="icon" title="Docker"><i class="devicon-docker-plain colored"></i></span>
-        <span class="icon" title="Kubernetes"><i class="devicon-kubernetes-plain colored"></i></span>
-        <span class="icon" title="Google Cloud"><i class="devicon-googlecloud-plain"></i></span>
-
-        
-          
+        <span class="icon"><i class="devicon-git-plain colored" title="Git"></i></span>
+        <span class="icon"><i class="devicon-linux-plain colored" title="Linux"></i></span>
+        <span class="icon" title="Make">Make</span>
+        <span class="icon" title="Confluence">C</span>
       </div>
     </li>
 
   </ul>
 </section>
 
-
-
-
-<!----- CERTIFICATIONS ----->
+<!-- ▸▸ 7  CERTIFICATIONS  ▸▸  (leave as placeholders – edit later) -->
 <section id="certifications" class="special">
   <div class="inner">
     <h2 class="about-title">CERTIFICATIONS</h2>
     <hr class="about-divider" />
-
-    <ul class="cert-grid">
-
-      <!-- 1 ▸ DeepLearning.AI ML Specialization -->
-      <li>
-        <a class="cert-card"
-           href="https://www.coursera.org/account/accomplishments/specialization/8CEAUHGQ79KC"
-           target="_blank" rel="noopener">
-          <div class="cert-image">
-            <img src="assets/images/certs/Unknown.png"
-                 alt="DeepLearning.AI ML Specialization">
-          </div>
-        </a>
-      </li>
-
-      <!-- 2 ▸ DataCamp Data Analyst -->
-      <li>
-        <a class="cert-card"
-           href="https://drive.google.com/file/d/1JLmV_vFex0l234vzeEKTLkf00ZnF6MzO/view?usp=sharing"
-           target="_blank" rel="noopener">
-          <div class="cert-image">
-            <img src="assets/images/certs/Unknown-1.png"
-                 alt="DataCamp Data Analyst">
-          </div>
-          
-        </a>
-      </li>
-
-      <!-- 3 ▸ Azure AI Fundamentals -->
-      <li>
-        <a class="cert-card"
-           href="https://www.certiport.com/portal/Pages/PrintTranscriptInfo.aspx?action=Cert&id=455&cvid=wLjygtLOrlK68+dHP9iLgQ=="
-           target="_blank" rel="noopener">
-          <div class="cert-image">
-            <img src="assets/images/certs/Unknown-3.png"
-                 alt="Azure AI Fundamentals">
-          </div>
-         
-        </a>
-      </li>
-
-      <!-- 4 ▸ Akuna Capital Options-201 -->
-      <li>
-        <a class="cert-card"
-           href="https://drive.google.com/file/d/1VkVU3owI5G3y1eonbh_CFRYe-JwN9e85/view?usp=sharing"
-           target="_blank" rel="noopener">
-          <div class="cert-image">
-            <img src="assets/images/certs/Unknown-2.png"
-                 alt="Akuna Capital Options 201">
-          </div>
-         
-        </a>
-      </li>
-
-      <!-- 5 ▸ Google Data Analytics -->
-      <li>
-        <a class="cert-card"
-           href="https://www.coursera.org/account/accomplishments/verify/8XJQWBD3FNGC"
-           target="_blank" rel="noopener">
-          <div class="cert-image">
-            <img src="assets/images/certs/ab_side_by_side_gcp_datanalyticsspecialization_badge.png"
-                 alt="Google Data Analytics">
-          </div>
-          
-        </a>
-      </li>
-
-      <!-- 6 ▸ Bloomberg Market Concepts -->
-      <li>
-        <a class="cert-card"
-           href="https://drive.google.com/file/d/1SCDy2zDJai322tfW322qjbC08uycIrpm/view?usp=sharing"
-           target="_blank" rel="noopener">
-          <div class="cert-image">
-            <img src="assets/images/certs/images.jpeg"
-                 alt="Bloomberg Market Concepts">
-          </div>
-          
-        </a>
-      </li>
-
-    </ul><!-- /.cert-grid -->
-  </div><!-- /.inner -->
+    <p style="text-align:center">Coming soon.</p>
+  </div>
 </section>
 
-
-
-<!-- ▸ FOOTER / CONTACT SECTION  ▸–––––––––––––––––––––––––––––––––– -->
+<!-- ▸▸ 8  FOOTER / CONTACT ▸▸ -->
 <footer id="footer" class="footer-revamp">
   <div class="footer-inner">
-
-    <!-- anchor so #contact in the navbar scrolls here -->
     <a id="contact" tabindex="-1" aria-hidden="true"></a>
 
-    <!-- SECTION TITLE – mirrors the experience heading -->
     <div class="contact-header">
       <h2 class="about-title">CONTACT</h2>
       <hr class="about-divider" />
     </div>
 
-    <!-- EMAIL  |  PHONE -->
     <div class="contact-details">
-      <p class="email">
-        <a href="mailto:venka198@purdue.edu">venka198@purdue.edu</a>
-      </p>
-      <p class="phone">
-        <a href="tel:+17657672708">765-767-2708</a>
-      </p>
+      <p class="email"><a href="mailto:gv2361@columbia.edu">gv2361@columbia.edu</a></p>
+      <p class="phone"><a href="tel:+16462104081">+1 (646) 210-4081</a></p>
     </div>
 
-    <!-- SOCIAL ICONS -->
     <div class="social">
-      <a href="https://www.linkedin.com/in/sanjith-krishna/"
-         class="icon brands alt fa-linkedin"
-         aria-label="LinkedIn"></a>
-      <a href="https://github.com/sanjith-v"
-         class="icon brands alt fa-github"
-         aria-label="GitHub"></a>
+      <a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands alt fa-linkedin" aria-label="LinkedIn"></a>
+      <a href="https://github.com/garvitvy18" class="icon brands alt fa-github" aria-label="GitHub"></a>
     </div>
 
-    <!-- COPYRIGHT -->
     <ul class="copyright">
-      <li>&copy; Sanjith Krishna</li>
-      <li>Design base: <a href="https://html5up.net">HTML5 UP</a></li>
+      <li>&copy; Garvit Vyas 2025</li>
+      <li>Design base: <a href="https://html5up.net" target="_blank" rel="noopener">HTML5 UP</a></li>
     </ul>
-
   </div>
 </footer>
 
+<!-- ▸▸ Scripts (unchanged) ▸▸ -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrolly.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
+<!-- mobile-menu toggle -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const nav    = document.querySelector('.nav-links');
 
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.scrolly.min.js"></script>
-  <script src="assets/js/jquery.scrollex.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const toggle = document.querySelector('.nav-toggle');
-      const nav    = document.querySelector('.nav-links');
-    
-      /* 1️⃣  open / close when “More ▾” is pressed */
-      toggle.addEventListener('click', () => {
-        const isOpen = nav.classList.toggle('open');
-        toggle.classList.toggle('open', isOpen);
-        toggle.setAttribute('aria-expanded', isOpen);
-      });
-    
-      /* 2️⃣  close again after a menu item is chosen (mobile view) */
-      nav.addEventListener('click', e => {
-        if (e.target.tagName === 'A' && nav.classList.contains('open')) {
-          nav.classList.remove('open');
-          toggle.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
-        }
-      });
+    toggle.addEventListener('click', () => {
+      const isOpen = nav.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
     });
-    </script>
-    
-    
-  
+
+    nav.addEventListener('click', e => {
+      if (e.target.tagName === 'A' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        toggle.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
