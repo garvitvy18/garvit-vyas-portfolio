@@ -4,13 +4,17 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Arm Internship · Garvit Vyas</title>
+
   <link rel="stylesheet" href="assets/css/main.css"/>
+  <!-- import the same blue-theme overrides -->
+  <link rel="stylesheet" href="assets/css/project-page.css"/>
 </head>
 
-<body class="is-preload">
+<!-- extra class picks up the blue backdrop + white text -->
+<body class="is-preload project-page">
 <div id="wrapper">
 
-  <!-- simple back link -->
+  <!-- simple back link (unchanged) -->
   <header id="navbar">
     <nav class="container">
       <a href="https://garvitvy18.github.io/garvit-vyas-portfolio/#experience">← Back</a>
@@ -19,11 +23,11 @@
 
   <section class="inner">
     <h1>SoC Engineer Intern — Arm</h1>
-    <p><em>May 2025 – Present · Chandler, AZ, USA</em></p>
+    <p><em>May&nbsp;2025 – Present · Chandler, AZ, USA</em></p>
 
     <ul>
       <li>Architected an <strong>automated register-block verification flow</strong> by parsing Jade RM Markdown into IP-XACT, JSON, and XML specs.</li>
-      <li>Auto-generated UVM models, C headers, and Python DV scaffolding; delivered a <code>make verify-regs</code> target.</li>
+      <li>Auto-generated UVM models, C headers, and Python DV scaffolding; delivered a <code>make&nbsp;verify-regs</code> target.</li>
       <li>Self-checking tests (address decode, RO/WO/W1C, RAW, B2B, random) reach 100 % functional coverage in &lt; 20 min CI.</li>
       <li>Regression runtime for multi-block SoCs cut <strong>6 ×</strong>; flow adopted by three 2026 tape-outs.</li>
     </ul>
