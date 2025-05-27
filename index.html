@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- small inline tweaks -->
+  <!-- inline tweaks: experience cards + skill boxes -->
   <style>
-    /* ▸▸ Experience logo cards ▸▸ */
+    /* ───── EXPERIENCE LOGO CARDS ───── */
     .exp-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
     .exp-card{
       width:220px;padding:1.4rem;border-radius:8px;text-align:center;
       background:#fff;box-shadow:0 4px 12px rgba(0,0,0,.08);
-      transition:transform .2s,box-shadow .2s
+      transition:transform .2s,box-shadow .2s;
     }
     .exp-card:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.12);}
     .exp-card img{height:48px;width:auto;margin-bottom:.75rem}
@@ -24,13 +24,22 @@
     .exp-date{font-size:.85rem;color:#666}
     .exp-link{display:block;color:inherit;text-decoration:none}
 
-    /* ▸▸ Plain skills list ▸▸ */
-    .plain-skills{list-style:none;padding:0;margin:1.5rem auto 0;max-width:720px}
-    .plain-skills li{margin:.5rem 0;font-size:1rem;line-height:1.4}
+    /* ───── SKILL BOXES ───── */
+    .skills-category{margin:1.5rem 0}
+    .skills-category h3{margin:.4rem 0}
+    .skill-boxes{
+      list-style:none;display:flex;flex-wrap:wrap;gap:.75rem;
+      padding:0;margin:.25rem 0 0;
+    }
+    .skill-boxes li{
+      background:#eef3ff;border:1px solid #d5defe;
+      padding:.4rem .85rem;border-radius:18px;font-size:.9rem;
+      white-space:nowrap;
+    }
   </style>
 </head>
 
-<!-- remove blur after load -->
+<!-- removes preload blur -->
 <script>window.addEventListener('load',()=>{document.body.classList.remove('is-preload');});</script>
 
 <body class="is-preload">
@@ -43,7 +52,7 @@
       <li><a href="#banner">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
 
-      <!-- mobile “More ▾” -->
+      <!-- mobile toggle -->
       <li class="mobile-more"><button class="nav-toggle" aria-expanded="false">MORE ▾</button></li>
 
       <li class="extra"><a href="#experience">EXPERIENCE</a></li>
@@ -56,13 +65,12 @@
 
 <!-- ▸ HERO -->
 <div id="banner-wrapper">
-  <div id="bg"></div> <div id="overlay"></div>
+  <div id="bg"></div><div id="overlay"></div>
   <section id="banner" class="major">
     <div class="inner">
       <div id="banner-content">
         <h1 class="animate-title">Garvit Vyas</h1>
-        <p class="animate-subtitle">SoC &amp; ASIC Engineer · M.S. Computer Engineering @ Columbia</p>
-
+        <p class="animate-subtitle">SoC & ASIC Engineer · M.S. Computer Engineering @ Columbia</p>
         <nav class="icons animate-icons">
           <ul>
             <li><a href="mailto:gv2361@columbia.edu" class="icon solid fa-envelope" title="Email"></a></li>
@@ -82,7 +90,6 @@
     <h2 class="about-title">ABOUT ME</h2><hr class="about-divider" />
 
     <div class="about-grid">
-      <!-- text -->
       <div class="about-text">
         <h3 class="about-subtitle">EDUCATION</h3>
         <ul class="education-list">
@@ -93,21 +100,22 @@
             </div></li>
           <li class="education-item"><span class="education-bar"></span>
             <div class="education-details">
-              <h4 class="education-degree">B.E. Electronics &amp; Communication</h4>
+              <h4 class="education-degree">B.E. Electronics & Communication</h4>
               <p class="education-institution">Jun 2024 · BITS Pilani</p>
             </div></li>
         </ul>
+
         <p class="about-description">
-          Hardware-centric engineer focused on SoC verification, on-chip networks and formal
-          flows. After optimising ring NoCs on FPGA at Columbia, I advanced USB and
-          register-block verification at NVIDIA and Arm, translating complex RTL into
-          reliable silicon through automation and metrics-driven workflows.
+          Hardware-centric engineer focused on SoC verification, on-chip networks
+          and formal flows. After optimising ring NoCs on FPGA at Columbia, I
+          advanced USB and register-block verification at NVIDIA and Arm—
+          translating complex RTL into reliable silicon through automation and
+          metrics-driven workflows.
         </p>
       </div>
 
-      <!-- image -->
       <div class="about-image">
-        <img src="assets/images/garvit.jpg" alt="Garvit Vyas head-shot" />
+        <img src="assets/images/garvit.jpg" alt="Garvit Vyas">
       </div>
     </div>
   </div>
@@ -120,44 +128,41 @@
 
     <div class="exp-grid">
 
-      <!-- Arm -->
       <a class="exp-link" href="exp-arm.html">
         <div class="exp-card">
-          <img src="assets/logos/arm.svg" alt="Arm logo">
+          <img src="assets/logos/arm.svg" alt="Arm">
           <p class="exp-role">SoC Engineer Intern</p>
           <span class="exp-date">May 2025 – Present</span>
         </div>
       </a>
 
-      <!-- NVIDIA -->
       <a class="exp-link" href="exp-nvidia.html">
         <div class="exp-card">
-          <img src="assets/logos/nvidia.svg" alt="NVIDIA logo">
+          <img src="assets/logos/nvidia.svg" alt="NVIDIA">
           <p class="exp-role">ASIC Verification Intern</p>
           <span class="exp-date">Jul 2023 – Dec 2023</span>
         </div>
       </a>
 
-      <!-- Samsung -->
       <a class="exp-link" href="exp-samsung.html">
         <div class="exp-card">
-          <img src="assets/logos/samsung.svg" alt="Samsung logo">
+          <img src="assets/logos/samsung.svg" alt="Samsung">
           <p class="exp-role">Analog Design Intern</p>
           <span class="exp-date">Jun 2022 – Jul 2022</span>
         </div>
       </a>
 
-    </div><!-- /.exp-grid -->
+    </div>
   </div>
 </section>
 
-<!-- ▸ PROJECTS (unchanged placeholders) -->
+<!-- ▸ PROJECTS (placeholder example) -->
 <section id="projects" class="special">
   <div class="experience-container">
     <h2 class="about-title">PROJECTS</h2><hr class="about-divider" />
   </div>
+
   <div class="tiles">
-    <!-- example card -->
     <article>
       <span class="image"><img src="assets/images/ringnoc-thumb.png" alt="Ring NoC"></span>
       <div class="content">
@@ -167,36 +172,61 @@
       </div>
       <a href="project-1.html" class="link primary"></a>
     </article>
-    <!-- add more project tiles as needed -->
+    <!-- add more <article> blocks for additional projects -->
   </div>
 </section>
 
-<!-- ▸ SKILLS (plain text) -->
+<!-- ▸ SKILLS (boxed) -->
 <section id="skills" class="special">
   <div class="inner">
     <header class="major"><h2>Skills</h2></header>
-    <ul class="plain-skills">
-      <li><strong>Languages &amp; RTL:</strong> SystemVerilog, Verilog, VHDL, C, Python, Perl, Tcl</li>
-      <li><strong>Verification &amp; EDA:</strong> UVM, Synopsys VCS/Verdi, Cadence JasperGold, Vivado, Cadence Virtuoso</li>
-      <li><strong>Workflow:</strong> Git, Linux, Make, Confluence</li>
-    </ul>
+
+    <!-- category 1 -->
+    <div class="skills-category">
+      <h3>Languages & RTL</h3>
+      <ul class="skill-boxes">
+        <li>SystemVerilog</li><li>Verilog</li><li>VHDL</li>
+        <li>C</li><li>Python</li><li>Perl</li><li>Tcl</li>
+      </ul>
+    </div>
+
+    <!-- category 2 -->
+    <div class="skills-category">
+      <h3>Verification & EDA</h3>
+      <ul class="skill-boxes">
+        <li>UVM</li><li>Synopsys VCS/Verdi</li><li>Cadence JasperGold</li>
+        <li>Vivado</li><li>Cadence Virtuoso</li>
+      </ul>
+    </div>
+
+    <!-- category 3 -->
+    <div class="skills-category">
+      <h3>Workflow</h3>
+      <ul class="skill-boxes">
+        <li>Git</li><li>Linux</li><li>Make</li><li>Confluence</li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
-<!-- ▸ FOOTER / CONTACT -->
+<!-- ▸ FOOTER -->
 <footer id="footer" class="footer-revamp">
   <div class="footer-inner">
     <a id="contact" tabindex="-1" aria-hidden="true"></a>
 
     <div class="contact-header"><h2 class="about-title">CONTACT</h2><hr class="about-divider" /></div>
+
     <div class="contact-details">
       <p class="email"><a href="mailto:gv2361@columbia.edu">gv2361@columbia.edu</a></p>
       <p class="phone"><a href="tel:+16462104081">+1 (646) 210-4081</a></p>
     </div>
+
     <div class="social">
       <a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands alt fa-linkedin" aria-label="LinkedIn"></a>
       <a href="https://github.com/garvitvy18" class="icon brands alt fa-github" aria-label="GitHub"></a>
     </div>
+
     <ul class="copyright">
       <li>&copy; Garvit Vyas 2025</li>
       <li>Design base: <a href="https://html5up.net" target="_blank">HTML5 UP</a></li>
@@ -204,7 +234,7 @@
   </div>
 </footer>
 
-<!-- ▸ template scripts -->
+<!-- template scripts -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -217,8 +247,15 @@
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
   const togg=document.querySelector('.nav-toggle'),nav=document.querySelector('.nav-links');
-  togg.addEventListener('click',()=>{const o=nav.classList.toggle('open');togg.classList.toggle('open',o);togg.setAttribute('aria-expanded',o);});
-  nav.addEventListener('click',e=>{if(e.target.tagName==='A'&&nav.classList.contains('open')){nav.classList.remove('open');togg.classList.remove('open');togg.setAttribute('aria-expanded','false');}});
+  togg.addEventListener('click',()=>{const open=nav.classList.toggle('open');
+    togg.classList.toggle('open',open);togg.setAttribute('aria-expanded',open);
+  });
+  nav.addEventListener('click',e=>{
+    if(e.target.tagName==='A'&&nav.classList.contains('open')){
+      nav.classList.remove('open');togg.classList.remove('open');
+      togg.setAttribute('aria-expanded','false');
+    }
+  });
 });
 </script>
 
