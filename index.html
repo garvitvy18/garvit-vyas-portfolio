@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- inline tweaks: experience cards + skill pills -->
+  <!-- inline tweaks: (legacy) grid cards, skill pills, + NEW timeline overrides -->
   <style>
-    /* ▸▸ Experience logo cards ▸▸ */
+    /* ▸▸ legacy grid cards (unused now, safe to keep) ▸▸ */
     .exp-grid{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center}
     .exp-card{
       width:220px;padding:1.4rem;border-radius:8px;text-align:center;
@@ -22,7 +22,6 @@
     .exp-card img{height:48px;width:auto;margin-bottom:.75rem}
     .exp-role{font-weight:600;font-size:1rem;margin:0 0 .25rem}
     .exp-date{font-size:.85rem;color:#666}
-    .exp-link{display:block;color:inherit;text-decoration:none}
 
     /* ▸▸ Skill pill boxes ▸▸ */
     #skills .skill-category{margin-bottom:1.5rem;text-align:center}
@@ -30,6 +29,41 @@
     .skill-pill{
       padding:.35rem .75rem;border-radius:999px;font-size:.9rem;
       background:#e8ecff;color:#1a1d3a;white-space:nowrap
+    }
+
+    /* ▸▸ NEW TIMELINE OVERRIDES ▸▸ */
+    #experience .timeline-item{
+      background:#ffffff !important;          /* white card */
+      color:#242943;                          /* dark text */
+      border-radius:10px;
+    }
+    #experience .timeline-item:hover{
+      box-shadow:0 8px 20px rgba(0,0,0,.25);
+    }
+
+    /* bigger logos */
+    #experience .exp-logo{
+      width:96px;height:auto;margin:0 auto 0.9rem;
+    }
+
+    /* back-face = read-more prompt */
+    #experience .read-more{
+      display:flex;align-items:center;justify-content:center;
+      background:#ffffff;height:100%;
+    }
+    #experience .read-more span{
+      font-weight:600;font-size:1rem;
+      padding:.6rem 1.4rem;border:2px solid #242943;border-radius:4px;
+      transition:all .2s ease;
+    }
+    #experience .timeline-item:hover .read-more span,
+    #experience .timeline-item:focus-visible .read-more span{
+      background:#242943;color:#ffffff;
+    }
+
+    /* make the whole card a link */
+    #experience .timeline-item .link.primary{
+      position:absolute;inset:0;border:0;z-index:5;
     }
   </style>
 </head>
@@ -97,7 +131,7 @@
           <li class="education-item"><span class="education-bar"></span>
             <div class="education-details">
               <h4 class="education-degree">B.E. Electronics&nbsp;&amp;&nbsp;Communication</h4>
-              <p class="education-institution">Jun&nbsp;2024 · Birla Institute of Technology & Science, Pilani</p>
+              <p class="education-institution">Jun&nbsp;2024 · Birla Institute of Technology &amp; Science, Pilani</p>
             </div></li>
         </ul>
         <p class="about-description">
@@ -123,85 +157,61 @@
 
     <div class="timeline">
 
-      <!-- Arm -->
+      <!-- Arm ------------------------------------------------------------ -->
       <div class="timeline-item">
         <div class="flip-card">
-
-          <!-- front face -->
+          <!-- front -->
           <div class="card-face card-front" style="text-align:center">
-            <img src="assets/images/arm.png" alt="Arm logo"
-                 style="height:72px;width:auto;margin:0 auto 0.75rem" />
+            <img class="exp-logo" src="assets/images/arm.png" alt="Arm logo">
             <p class="timeline-title">SoC Engineer Intern</p>
             <p class="timeline-company">Arm • Chandler, AZ</p>
-            <span class="timeline-date">May&nbsp;2025&nbsp;– Present</span>
+            <span class="timeline-date">May 2025 – Present</span>
           </div>
-
-          <!-- back face -->
-          <div class="card-face card-back">
-            <ul>
-              <li>Built an automated register-block verification flow from Markdown ➜ IP-XACT / JSON / XML, generating self-checking C tests over the APB bus.</li>
-              <li>Wrote Python + UVM wrappers that autogenerate probe code for complex register behaviours and drive full-chip regression.</li>
-            </ul>
+          <!-- back -->
+          <div class="card-face card-back read-more">
+            <span>Read&nbsp;more&nbsp;→</span>
           </div>
-
         </div>
+        <a class="link primary" href="exp-arm.html"></a>
       </div>
 
-      <!-- NVIDIA -->
+      <!-- NVIDIA --------------------------------------------------------- -->
       <div class="timeline-item">
         <div class="flip-card">
-
-          <!-- front face -->
           <div class="card-face card-front" style="text-align:center">
-            <img src="assets/images/nvidia.png" alt="NVIDIA logo"
-                 style="height:72px;width:auto;margin:0 auto 0.75rem" />
+            <img class="exp-logo" src="assets/images/nvidia.png" alt="NVIDIA logo">
             <p class="timeline-title">ASIC Verification Intern</p>
             <p class="timeline-company">NVIDIA • Bangalore, IN</p>
-            <span class="timeline-date">Jul&nbsp;2023&nbsp;– Dec&nbsp;2023</span>
+            <span class="timeline-date">Jul 2023 – Dec 2023</span>
           </div>
-
-          <!-- back face -->
-          <div class="card-face card-back">
-            <ul>
-              <li>Refactored USB 2/3 UVM test-bench, stripping 10 % of unwanted DUT dependencies and isolating XHCI logic for cleaner modularity.</li>
-              <li>Migrated USB BFMs into the SoC-level environment, eliminating 16 weeks of duplicate effort per chip.</li>
-              <li>Released the team’s first CRR verification component by wrapping Verilog TB code with Perl automation.</li>
-            </ul>
+          <div class="card-face card-back read-more">
+            <span>Read&nbsp;more&nbsp;→</span>
           </div>
-
         </div>
+        <a class="link primary" href="exp-nvidia.html"></a>
       </div>
 
-      <!-- Samsung -->
+      <!-- Samsung -------------------------------------------------------- -->
       <div class="timeline-item">
         <div class="flip-card">
-
-          <!-- front face -->
           <div class="card-face card-front" style="text-align:center">
-            <img src="assets/images/samsung.png" alt="Samsung logo"
-                 style="height:72px;width:auto;margin:0 auto 0.75rem" />
+            <img class="exp-logo" src="assets/images/samsung.png" alt="Samsung logo">
             <p class="timeline-title">Analog Design Intern</p>
             <p class="timeline-company">Samsung Semiconductor • Bangalore, IN</p>
-            <span class="timeline-date">Jun&nbsp;2022&nbsp;– Jul&nbsp;2022</span>
+            <span class="timeline-date">Jun 2022 – Jul 2022</span>
           </div>
-
-          <!-- back face -->
-          <div class="card-face card-back">
-            <ul>
-              <li>Optimised CMOS W/L ratios in Cadence Virtuoso & HSPICE, boosting switching speed while cutting power.</li>
-              <li>Designed a two-stage op-amp that achieved high-frequency GBW with &lt; 2 % distortion and a stable closed-loop gain.</li>
-            </ul>
+          <div class="card-face card-back read-more">
+            <span>Read&nbsp;more&nbsp;→</span>
           </div>
-
         </div>
+        <a class="link primary" href="exp-samsung.html"></a>
       </div>
 
     </div><!-- /.timeline -->
   </div><!-- /.experience-container -->
 </section>
 
-
-<!-- ▸ PROJECTS (placeholder example) -->
+<!-- ▸ PROJECTS -->
 <section id="projects" class="special">
   <div class="experience-container">
     <h2 class="about-title">PROJECTS</h2><hr class="about-divider" />
@@ -216,11 +226,11 @@
       </div>
       <a href="project-1.html" class="link primary"></a>
     </article>
-    <!-- add more project tiles here -->
+    <!-- more tiles here … -->
   </div>
 </section>
 
-<!-- ▸ SKILLS (pill boxes) -->
+<!-- ▸ SKILLS -->
 <section id="skills" class="special">
   <div class="inner">
     <header class="major"><h2>Skills</h2></header>
@@ -298,9 +308,20 @@
 <!-- mobile menu toggle -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-  const togg=document.querySelector('.nav-toggle'),nav=document.querySelector('.nav-links');
-  togg.addEventListener('click',()=>{const o=nav.classList.toggle('open');togg.classList.toggle('open',o);togg.setAttribute('aria-expanded',o);});
-  nav.addEventListener('click',e=>{if(e.target.tagName==='A'&&nav.classList.contains('open')){nav.classList.remove('open');togg.classList.remove('open');togg.setAttribute('aria-expanded','false');}});
+  const togg=document.querySelector('.nav-toggle'),
+        nav=document.querySelector('.nav-links');
+  togg.addEventListener('click',()=>{
+    const open=nav.classList.toggle('open');
+    togg.classList.toggle('open',open);
+    togg.setAttribute('aria-expanded',open);
+  });
+  nav.addEventListener('click',e=>{
+    if(e.target.tagName==='A'&&nav.classList.contains('open')){
+      nav.classList.remove('open');
+      togg.classList.remove('open');
+      togg.setAttribute('aria-expanded','false');
+    }
+  });
 });
 </script>
 
