@@ -5,9 +5,8 @@
   <title>Garvit Vyas | SoC &amp; ASIC Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- base + icons -->
+  <!-- template styles -->
   <link rel="stylesheet" href="assets/css/main.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-VnZCvtDX6eUan6nUGny2cScPAAT5L4Hv+U+5+5zq9nWhV5l7XlDDjUijq/OR0c7ukBqf/FuwSTyS6GF1qWqugA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <!-- ────────────────────────────────────────────────────
@@ -47,23 +46,9 @@
     #experience .timeline-item:focus-visible .read-more span{background:#242943;color:#fff}
     #experience .timeline-item .link.primary{position:absolute;inset:0;border:0;z-index:5}
 
-    /* ▸▸ PROJECT TILES  (updated override) ▸▸ */
-    .tiles article{
-      position:relative;
-      background:#ffffff !important;
-      color:#242943 !important;
-      box-shadow:0 4px 12px rgba(0,0,0,.08);
-      transition:transform .2s,box-shadow .2s;
-    }
-    .tiles article:hover{transform:translateY(-4px);box-shadow:0 6px 16px rgba(0,0,0,.15)}
-    /* kill the built-in dark overlays */
-    .tiles article:before,
-    .tiles article .image:before{display:none !important;}
-    /* ensure image is shown normally */
-    .tiles article .image img{filter:none !important;}
-    /* text + tag colours */
-    .tiles article .content h3,
-    .tiles article .content p{color:#242943}
+    /* ▸▸ PROJECT TILES → white cards ▸▸ */
+    .tiles article{background:#ffffff !important;color:#242943 !important}
+    .tiles article:hover{background:#ffffff !important}
     .tiles article p.desc{color:#444}
     .tiles article .tags span{background:#e8ecff;color:#1a1d3a}
 
@@ -76,6 +61,8 @@
       box-shadow:0 4px 12px rgba(0,0,0,.1);transition:.3s;color:#242943;
     }
     .resume-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
+
+    /* thumbnail uses the same Font-Awesome icon as the navbar */
     .resume-thumb{font-size:5rem;line-height:1;color:#242943}
 
     /* ACTION BUTTONS */
@@ -148,7 +135,7 @@
             <li><a href="mailto:gv2361@columbia.edu" class="icon solid fa-envelope" title="Email"></a></li>
             <li><a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands fa-linkedin" target="_blank"></a></li>
             <li><a href="https://github.com/garvitvy18" class="icon brands fa-github" target="_blank"></a></li>
-            <li><a href="Garvit%20Vyas_resume_temp.pdf" class="icon solid fa-file-alt" title="Résumé PDF" target="_blank"></a></li>
+            <li><a href="Garvit Vyas_resume_temp.pdf" class="icon solid fa-file-alt" title="Résumé PDF" target="_blank"></a></li>
           </ul>
         </nav>
       </div>
@@ -289,11 +276,12 @@
   <div class="resume-container">
     <h2 class="about-title">RÉSUMÉ</h2><hr class="about-divider" />
     <div class="resume-card">
+      <!-- same icon as navbar, used as thumbnail -->
       <span class="icon solid fa-file-alt resume-thumb" aria-hidden="true"></span>
-      <p>Here's my updated Resume as of May&nbsp;2025</p>
+      <p>Here's my updated Resume as of May 2025</p>
       <div class="resume-actions">
         <button class="resume-btn view-btn" id="openModal">View PDF</button>
-        <a href="Garvit%20Vyas_resume_temp.pdf" class="resume-btn download-btn" download>Download PDF</a>
+        <a href="Garvit Vyas_resume_temp.pdf" class="resume-btn download-btn" download>Download PDF</a>
       </div>
     </div>
   </div>
@@ -319,7 +307,7 @@
 <!-- ▸ MODAL PDF VIEWER -->
 <div class="modal" id="resumeModal" aria-hidden="true">
   <button class="modal-close" aria-label="Close résumé" id="closeModal">&times;</button>
-  <iframe src="Garvit%20Vyas_resume_temp.pdf#toolbar=0&amp;view=fitH" title="Résumé PDF"></iframe>
+  <iframe src="Garvit Vyas_resume_temp.pdf#toolbar=0&amp;view=fitH" title="Résumé PDF"></iframe>
 </div>
 
 <!-- ▸ template scripts -->
