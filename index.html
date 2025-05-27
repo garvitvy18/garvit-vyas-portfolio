@@ -33,12 +33,9 @@
 
     /* ▸▸ Timeline cards ▸▸ */
     #experience .timeline-item{
-      background:#ffffff !important;
-      color:#242943;border-radius:10px;
+      background:#ffffff !important;color:#242943;border-radius:10px;
     }
-    #experience .timeline-item:hover{
-      box-shadow:0 8px 20px rgba(0,0,0,.25);
-    }
+    #experience .timeline-item:hover{box-shadow:0 8px 20px rgba(0,0,0,.25);}
     #experience .exp-logo{width:96px;height:auto;margin:0 auto .9rem}
     #experience .read-more{
       display:flex;align-items:center;justify-content:center;background:#fff;height:100%;
@@ -54,10 +51,7 @@
     #experience .timeline-item .link.primary{position:absolute;inset:0;border:0;z-index:5}
 
     /* ▸▸ PROJECT TILES → white cards ▸▸ */
-    .tiles article{
-      background:#ffffff !important;
-      color:#242943 !important;
-    }
+    .tiles article{background:#ffffff !important;color:#242943 !important;}
     .tiles article:hover{background:#ffffff !important;}
     .tiles article p.desc{color:#444;}
     .tiles article .tags span{background:#e8ecff;color:#1a1d3a;}
@@ -72,11 +66,16 @@
     }
     .resume-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.25);}
     .resume-card img{width:160px;height:auto;border:1px solid #ddd;}
-    .resume-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
+
+    /* ACTION BUTTONS */
+    .resume-actions{
+      display:flex;gap:1rem;flex-wrap:wrap;          /* existing behaviour            */
+      justify-content:center;align-items:center;     /* ← keeps buttons perfectly centred */
+    }
     .resume-btn{
       display:inline-block;padding:.65rem 1.5rem;font-size:.85rem;font-weight:600;
       text-transform:uppercase;letter-spacing:.05em;border-radius:4px;border:0;cursor:pointer;
-      transition:background .2s;
+      transition:background .2s;text-align:center;   /* ← ensure text is centred inside */
     }
     .view-btn{background:#242943;color:#fff;}
     .view-btn:hover{background:#1b3564;}
@@ -91,8 +90,9 @@
     .modal-close{
       position:absolute;top:1rem;right:1rem;background:#fff;border:0;font-size:1.25rem;
       line-height:1;padding:.25rem .6rem;border-radius:4px;cursor:pointer;font-weight:700;
+      color:#000;                       /* black “×” icon */
     }
-    .modal-close:hover{background:#e8ecff;}
+    .modal-close:hover{background:#e8ecff;color:#000;}
 
     /* ▸▸ Columbia-blue backdrop ▸▸ */
     :root{ --columbia:#1D4F91; }
@@ -149,21 +149,19 @@
 <section id="about" class="about-section">
   <div class="about-container">
     <h2 class="about-title">ABOUT ME</h2><hr class="about-divider" />
-
     <div class="about-grid">
-      <!-- text -->
       <div class="about-text">
         <h3 class="about-subtitle">EDUCATION</h3>
         <ul class="education-list">
           <li class="education-item"><span class="education-bar"></span>
             <div class="education-details">
               <h4 class="education-degree">M.S. Computer Engineering</h4>
-              <p class="education-institution">Dec&nbsp;2025 · Columbia University</p>
+              <p class="education-institution">Dec 2025 · Columbia University</p>
             </div></li>
           <li class="education-item"><span class="education-bar"></span>
             <div class="education-details">
-              <h4 class="education-degree">B.E. Electronics&nbsp;&amp;&nbsp;Communication</h4>
-              <p class="education-institution">Jun&nbsp;2024 · Birla Institute of Technology &amp; Science, Pilani</p>
+              <h4 class="education-degree">B.E. Electronics & Communication</h4>
+              <p class="education-institution">Jun 2024 · Birla Institute of Technology & Science, Pilani</p>
             </div></li>
         </ul>
         <p class="about-description">
@@ -173,11 +171,7 @@
           into reliable silicon through automation and metrics-driven workflows.
         </p>
       </div>
-
-      <!-- image -->
-      <div class="about-image">
-        <img src="assets/images/garvit.jpg" alt="Garvit Vyas head-shot" />
-      </div>
+      <div class="about-image"><img src="assets/images/garvit.jpg" alt="Garvit Vyas head-shot" /></div>
     </div>
   </div>
 </section>
@@ -186,9 +180,8 @@
 <section id="experience" class="experience-section">
   <div class="experience-container">
     <h2 class="about-title">EXPERIENCE</h2><hr class="about-divider" />
-
     <div class="timeline">
-      <!-- Arm ------------------------------------------------------------ -->
+      <!-- Arm -->
       <div class="timeline-item">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
@@ -197,14 +190,11 @@
             <p class="timeline-company">Arm • Chandler, AZ</p>
             <span class="timeline-date">May 2025 – Present</span>
           </div>
-          <div class="card-face card-back read-more">
-            <span>Read&nbsp;more&nbsp;→</span>
-          </div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-arm.html"></a>
       </div>
-
-      <!-- NVIDIA --------------------------------------------------------- -->
+      <!-- NVIDIA -->
       <div class="timeline-item">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
@@ -213,14 +203,11 @@
             <p class="timeline-company">NVIDIA • Bangalore, IN</p>
             <span class="timeline-date">Jul 2023 – Dec 2023</span>
           </div>
-          <div class="card-face card-back read-more">
-            <span>Read&nbsp;more&nbsp;→</span>
-          </div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-nvidia.html"></a>
       </div>
-
-      <!-- Samsung -------------------------------------------------------- -->
+      <!-- Samsung -->
       <div class="timeline-item">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
@@ -229,9 +216,7 @@
             <p class="timeline-company">Samsung Semiconductor India Research • Bangalore, IN</p>
             <span class="timeline-date">Jun 2022 – Jul 2022</span>
           </div>
-          <div class="card-face card-back read-more">
-            <span>Read&nbsp;more&nbsp;→</span>
-          </div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-samsung.html"></a>
       </div>
@@ -249,12 +234,11 @@
       <span class="image"><img src="assets/images/ringnoc-thumb.png" alt="Ring NoC"></span>
       <div class="content">
         <h3>Ring NoC on ESP</h3>
-        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area&nbsp;12 % and latency&nbsp;3 %.</p>
+        <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area 12 % and latency 3 %.</p>
         <div class="tags"><span>SystemVerilog</span><span>FPGA</span></div>
       </div>
       <a href="project-1.html" class="link primary"></a>
     </article>
-    <!-- add more <article> blocks as needed -->
   </div>
 </section>
 
@@ -262,41 +246,28 @@
 <section id="skills" class="special">
   <div class="inner">
     <header class="major"><h2>Skills</h2></header>
-
-    <!-- Category 1 -->
     <div class="skill-category">
       <h3>Languages &amp; RTL</h3>
       <div class="skill-pills">
-        <span class="skill-pill">SystemVerilog</span>
-        <span class="skill-pill">Verilog</span>
-        <span class="skill-pill">VHDL</span>
-        <span class="skill-pill">C</span>
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">Perl</span>
+        <span class="skill-pill">SystemVerilog</span><span class="skill-pill">Verilog</span>
+        <span class="skill-pill">VHDL</span><span class="skill-pill">C</span>
+        <span class="skill-pill">Python</span><span class="skill-pill">Perl</span>
         <span class="skill-pill">Tcl</span>
       </div>
     </div>
-
-    <!-- Category 2 -->
     <div class="skill-category">
       <h3>Verification &amp; EDA</h3>
       <div class="skill-pills">
-        <span class="skill-pill">UVM</span>
-        <span class="skill-pill">Synopsys VCS/Verdi</span>
-        <span class="skill-pill">Cadence JasperGold</span>
-        <span class="skill-pill">Vivado</span>
+        <span class="skill-pill">UVM</span><span class="skill-pill">Synopsys VCS/Verdi</span>
+        <span class="skill-pill">Cadence JasperGold</span><span class="skill-pill">Vivado</span>
         <span class="skill-pill">Cadence Virtuoso</span>
       </div>
     </div>
-
-    <!-- Category 3 -->
     <div class="skill-category">
       <h3>Workflow &amp; Tools</h3>
       <div class="skill-pills">
-        <span class="skill-pill">Git</span>
-        <span class="skill-pill">Linux</span>
-        <span class="skill-pill">Make</span>
-        <span class="skill-pill">Confluence</span>
+        <span class="skill-pill">Git</span><span class="skill-pill">Linux</span>
+        <span class="skill-pill">Make</span><span class="skill-pill">Confluence</span>
       </div>
     </div>
   </div>
@@ -324,15 +295,13 @@
     <div class="contact-header"><h2 class="about-title">CONTACT</h2><hr class="about-divider" /></div>
     <div class="contact-details">
       <p class="email"><a href="mailto:gv2361@columbia.edu">gv2361@columbia.edu</a></p>
-      <p class="phone"><a href="tel:+16462104081">+1&nbsp;(646)&nbsp;210-4081</a></p>
+      <p class="phone"><a href="tel:+16462104081">+1 (646) 210-4081</a></p>
     </div>
     <div class="social">
       <a href="https://www.linkedin.com/in/garvit-vyas/" class="icon brands alt fa-linkedin" aria-label="LinkedIn"></a>
       <a href="https://github.com/garvitvy18" class="icon brands alt fa-github" aria-label="GitHub"></a>
     </div>
-    <ul class="copyright">
-      <li>&copy; Garvit Vyas</li>
-    </ul>
+    <ul class="copyright"><li>&copy; Garvit Vyas</li></ul>
   </div>
 </footer>
 
@@ -354,8 +323,7 @@
 <!-- extras: mobile nav + résumé modal -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
-
-  /* mobile “More ▾” toggle */
+  /* mobile nav toggle */
   const togg=document.querySelector('.nav-toggle'),
         nav=document.querySelector('.nav-links');
   togg.addEventListener('click',()=>{
@@ -374,10 +342,10 @@ document.addEventListener('DOMContentLoaded',()=>{
         openBtn =document.getElementById('openModal'),
         closeBtn=document.getElementById('closeModal');
   openBtn.addEventListener('click',()=>{ modal.classList.add('open');modal.setAttribute('aria-hidden','false');});
+  const close=()=>{ modal.classList.remove('open');modal.setAttribute('aria-hidden','true');};
   closeBtn.addEventListener('click',close);
   modal.addEventListener('click',e=>{ if(e.target===modal) close();});
   document.addEventListener('keydown',e=>{ if(e.key==='Escape') close();});
-  function close(){ modal.classList.remove('open');modal.setAttribute('aria-hidden','true');}
 });
 </script>
 
