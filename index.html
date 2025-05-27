@@ -86,6 +86,14 @@
   #contact > .inner > :nth-child(2n-1)   /* contact's left column strip */
   { background:var(--columbia)!important; }
 </style>
+  <style>
+  /* keep it one line **and** centre it perfectly */
+  .animate-subtitle{
+    white-space: nowrap;   /* stay on one line        */
+    display: inline-block; /* shrink width to content */
+    margin: 0 auto;        /* auto side-margins = centre */
+  }
+</style>
 </head>
 
 <script>window.addEventListener('load',()=>{document.body.classList.remove('is-preload');});</script>
