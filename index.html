@@ -5,15 +5,15 @@
   <title>Garvit Vyas | SoC &amp; ASIC Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <!-- theme / template -->
+  <!-- base template -->
   <link rel="stylesheet" href="assets/css/main.css"/>
   <noscript><link rel="stylesheet" href="assets/css/noscript.css"/></noscript>
 
-  <!-- ──────────────────────────
+  <!-- ────────────────────────────────
        INLINE OVERRIDES
-  ────────────────────────── -->
+  ──────────────────────────────── -->
   <style>
-    /* helper → universal white card */
+    /* universal white card helper */
     .white-card{
       background:#ffffff;color:#242943;border-radius:10px;
       box-shadow:0 4px 12px rgba(0,0,0,.08);
@@ -24,7 +24,7 @@
       box-shadow:0 6px 16px rgba(0,0,0,.15);
     }
 
-    /* timeline overrides */
+    /* experience timeline */
     #experience .timeline-item{background:#ffffff!important}
     #experience .timeline-item:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
     #experience .exp-logo{width:96px;height:auto;margin:0 auto .9rem}
@@ -33,35 +33,38 @@
       font-weight:600;font-size:1rem;padding:.6rem 1.4rem;
       border:2px solid #242943;border-radius:4px;transition:.2s;
     }
-    #experience .timeline-item:hover .read-more span{background:#242943;color:#ffffff}
+    #experience .timeline-item:hover .read-more span{background:#242943;color:#fff}
     #experience .timeline-item .link.primary{position:absolute;inset:0;border:0;z-index:5}
 
-    /* skill / tag pills */
+    /* skill + tag pills */
     .skill-pills span,
-    .project-card .tags span{
+    #projects .project-card .tags span{
       background:#e8ecff;color:#1a1d3a;border-radius:999px;
       padding:.35rem .75rem;font-size:.9rem;white-space:nowrap;
     }
 
-    /* NEW project grid */
+    /* ── PROJECT GRID (scoped to #projects so it
+       DOES NOT affect standalone project pages) */
     #projects .project-grid{
       display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:2rem;
     }
-    .project-card{
+    #projects .project-card{
       width:260px;text-decoration:none;
     }
-    .project-card img{width:100%;border-radius:10px 10px 0 0}
-    .project-card h3{margin:1.05rem 1rem .35rem;font-size:1.1rem}
-    .project-card p.desc{margin:0 1rem 1rem;color:#444;font-size:.9rem}
+    #projects .project-card img{width:100%;border-radius:10px 10px 0 0}
+    #projects .project-card h3{margin:1.05rem 1rem .35rem;font-size:1.1rem}
+    #projects .project-card p.desc{margin:0 1rem 1rem;color:#444;font-size:.9rem}
 
-    /* résumé card */
+    /* résumé card (kept exactly as before) */
     .resume-card{
       display:flex;flex-direction:column;align-items:center;gap:1.5rem;
-      padding:2.5rem 2rem;
+      padding:2.5rem 2rem;background:#fff;border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.1);transition:.3s;color:#242943;
     }
+    .resume-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
     .resume-thumb{font-size:5rem;line-height:1;color:#242943}
 
-    /* resume buttons */
+    /* résumé buttons */
     .resume-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;align-items:center}
     .resume-btn{
       display:flex;align-items:center;justify-content:center;min-width:140px;
@@ -69,23 +72,23 @@
       letter-spacing:.05em;border-radius:4px;border:0;cursor:pointer;text-decoration:none;
       transition:background .2s;
     }
-    .view-btn{background:#242943;color:#ffffff}
+    .view-btn{background:#242943;color:#fff}
     .view-btn:hover{background:#1b3564}
     .download-btn{background:#e8ecff;color:#1a1d3a}
     .download-btn:hover{background:#cfd8ff}
 
-    /* modal viewer */
+    /* modal */
     .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;
       background:rgba(0,0,0,.85);z-index:10000;padding:2rem}
     .modal.open{display:flex}
     .modal iframe{width:100%;height:100%;max-width:1000px;border:0;border-radius:6px}
     .modal-close{
-      position:absolute;top:1rem;right:1rem;background:#ffffff;border:0;font-size:1.25rem;
+      position:absolute;top:1rem;right:1rem;background:#fff;border:0;font-size:1.25rem;
       line-height:1;padding:.25rem .6rem;border-radius:4px;cursor:pointer;font-weight:700;color:#000;
     }
     .modal-close:hover{background:#e8ecff}
 
-    /* Columbia-blue panels (template default) */
+    /* columbia-blue big panels */
     :root{--columbia:#1D4F91}
     body,#wrapper,#main,#navbar,#header,#footer,#menu,#banner:after,
     .spotlights>section,#contact>.inner>:nth-child(2n-1){
@@ -99,7 +102,7 @@
 <body class="is-preload">
 <div id="wrapper">
 
-<!-- ▸ NAVBAR -->
+<!-- NAVBAR -->
 <header id="navbar">
   <nav class="container">
     <ul class="nav-links">
@@ -115,7 +118,7 @@
   </nav>
 </header>
 
-<!-- ▸ HERO -->
+<!-- HERO -->
 <div id="banner-wrapper">
   <div id="bg"></div><div id="overlay"></div>
   <section id="banner" class="major">
@@ -136,12 +139,11 @@
   </section>
 </div>
 
-<!-- ▸ ABOUT -->
+<!-- ABOUT -->
 <section id="about" class="about-section">
   <div class="about-container">
     <h2 class="about-title">ABOUT ME</h2><hr class="about-divider"/>
     <div class="about-grid">
-      <!-- text -->
       <div class="about-text">
         <h3 class="about-subtitle">EDUCATION</h3>
         <ul class="education-list">
@@ -165,18 +167,17 @@
           into reliable silicon through automation and metrics-driven workflows.
         </p>
       </div>
-      <!-- image -->
       <div class="about-image"><img src="assets/images/garvit.jpg" alt="Garvit Vyas head-shot"></div>
     </div>
   </div>
 </section>
 
-<!-- ▸ EXPERIENCE -->
+<!-- EXPERIENCE -->
 <section id="experience" class="experience-section">
   <div class="experience-container">
     <h2 class="about-title">EXPERIENCE</h2><hr class="about-divider"/>
     <div class="timeline">
-      <!-- Arm -->
+      <!-- ARM -->
       <div class="timeline-item white-card">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
@@ -185,7 +186,7 @@
             <p class="timeline-company">Arm • Chandler, AZ</p>
             <span class="timeline-date">May 2025 – Present</span>
           </div>
-          <div class="card-face card-back read-more"><span>Read more →</span></div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-arm.html"></a>
       </div>
@@ -199,12 +200,12 @@
             <p class="timeline-company">NVIDIA • Bangalore, IN</p>
             <span class="timeline-date">Jul 2023 – Dec 2023</span>
           </div>
-          <div class="card-face card-back read-more"><span>Read more →</span></div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-nvidia.html"></a>
       </div>
 
-      <!-- Samsung -->
+      <!-- SAMSUNG -->
       <div class="timeline-item white-card">
         <div class="flip-card">
           <div class="card-face card-front" style="text-align:center">
@@ -213,7 +214,7 @@
             <p class="timeline-company">Samsung SIR • Bangalore, IN</p>
             <span class="timeline-date">Jun 2022 – Jul 2022</span>
           </div>
-          <div class="card-face card-back read-more"><span>Read more →</span></div>
+          <div class="card-face card-back read-more"><span>Read more →</span></div>
         </div>
         <a class="link primary" href="exp-samsung.html"></a>
       </div>
@@ -221,29 +222,27 @@
   </div>
 </section>
 
-<!-- ▸ PROJECTS -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="experience-container">
     <h2 class="about-title">PROJECTS</h2><hr class="about-divider"/>
     <div class="project-grid">
-      <!-- project 1 -->
       <a href="project-1.html" class="project-card white-card">
         <img src="assets/images/ringnoc-thumb.png" alt="Ring NoC thumbnail">
         <h3>Ring NoC on ESP</h3>
         <p class="desc">Replaced mesh with a 3-port ring router; Hamiltonian mapping cut area 12 % and latency 3 %.</p>
         <div class="tags"><span>SystemVerilog</span><span>FPGA</span></div>
       </a>
-      <!-- add more .project-card blocks as you create more detail pages -->
+      <!-- add more cards as needed -->
     </div>
   </div>
 </section>
 
-<!-- ▸ SKILLS -->
+<!-- SKILLS -->
 <section id="skills" class="special">
   <div class="inner">
     <header class="major"><h2>Skills</h2></header>
 
-    <!-- Languages -->
     <div class="skill-category">
       <h3>Languages &amp; RTL</h3>
       <div class="skill-pills">
@@ -252,7 +251,6 @@
       </div>
     </div>
 
-    <!-- Verification -->
     <div class="skill-category">
       <h3>Verification &amp; EDA</h3>
       <div class="skill-pills">
@@ -261,7 +259,6 @@
       </div>
     </div>
 
-    <!-- Workflow -->
     <div class="skill-category">
       <h3>Workflow &amp; Tools</h3>
       <div class="skill-pills">
@@ -271,11 +268,11 @@
   </div>
 </section>
 
-<!-- ▸ RESUME -->
+<!-- RESUME -->
 <section id="resume">
   <div class="resume-container">
     <h2 class="about-title">RÉSUMÉ</h2><hr class="about-divider"/>
-    <div class="resume-card white-card">
+    <div class="resume-card">
       <span class="icon solid fa-file-alt resume-thumb" aria-hidden="true"></span>
       <p>Here's my updated résumé as of May 2025.</p>
       <div class="resume-actions">
@@ -286,7 +283,7 @@
   </div>
 </section>
 
-<!-- ▸ FOOTER -->
+<!-- FOOTER -->
 <footer id="footer" class="footer-revamp">
   <div class="footer-inner">
     <a id="contact" tabindex="-1" aria-hidden="true"></a>
@@ -303,13 +300,13 @@
   </div>
 </footer>
 
-<!-- ▸ MODAL VIEWER -->
+<!-- MODAL -->
 <div class="modal" id="resumeModal" aria-hidden="true">
   <button class="modal-close" id="closeModal" aria-label="Close résumé">&times;</button>
   <iframe src="Garvit Vyas_resume_temp.pdf#toolbar=0&view=fitH" title="Résumé PDF"></iframe>
 </div>
 
-<!-- ▸ SCRIPTS -->
+<!-- SCRIPTS -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/jquery.scrolly.min.js"></script>
 <script src="assets/js/jquery.scrollex.min.js"></script>
@@ -318,11 +315,11 @@
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
 
-<!-- nav toggle + modal -->
+<!-- nav toggle / modal -->
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
 
-  /* mobile nav toggle */
+  /* mobile nav */
   const togg=document.querySelector('.nav-toggle'),
         nav=document.querySelector('.nav-links');
   if(togg){
@@ -331,7 +328,7 @@ document.addEventListener('DOMContentLoaded',()=>{
       togg.setAttribute('aria-expanded',open);
     });
     nav.addEventListener('click',e=>{
-      if(e.target.tagName==='A' && nav.classList.contains('open')){
+      if(e.target.tagName==='A'&&nav.classList.contains('open')){
         nav.classList.remove('open');
         togg.setAttribute('aria-expanded','false');
       }
