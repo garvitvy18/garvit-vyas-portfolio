@@ -61,7 +61,9 @@
       box-shadow:0 4px 12px rgba(0,0,0,.1);transition:.3s;color:#242943;
     }
     .resume-card:hover{box-shadow:0 8px 20px rgba(0,0,0,.25)}
-    .resume-card img{width:160px;height:auto;border:1px solid #ddd}
+
+    /* thumbnail uses the same Font-Awesome icon as the navbar */
+    .resume-thumb{font-size:5rem;line-height:1;color:#242943}
 
     /* ACTION BUTTONS */
     .resume-actions{
@@ -69,8 +71,8 @@
       justify-content:center;align-items:center;
     }
     .resume-btn{
-      display:flex;align-items:center;justify-content:center; /* centre label  */
-      min-width:140px;                    /* keeps width consistent      */
+      display:flex;align-items:center;justify-content:center;
+      min-width:140px;
       padding:.65rem 1.5rem;font-size:.85rem;font-weight:600;
       text-transform:uppercase;letter-spacing:.05em;
       border-radius:4px;border:0;cursor:pointer;text-decoration:none;
@@ -274,8 +276,9 @@
   <div class="resume-container">
     <h2 class="about-title">RÉSUMÉ</h2><hr class="about-divider" />
     <div class="resume-card">
-      <img src="assets/images/resume-thumb.png" alt="Résumé thumbnail">
-      <p>Here's my updated Résumé as of May 2025</p>
+      <!-- same icon as navbar, used as thumbnail -->
+      <span class="icon solid fa-file-alt resume-thumb" aria-hidden="true"></span>
+      <p>A concise one-page snapshot of my verification &amp; RTL experience.</p>
       <div class="resume-actions">
         <button class="resume-btn view-btn" id="openModal">View PDF</button>
         <a href="Garvit Vyas_resume_temp.pdf" class="resume-btn download-btn" download>Download PDF</a>
